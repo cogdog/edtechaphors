@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<style>
+	    .jumbotron  {
+	    	opacity: 0.8;
+	    	margin-bottom:3em;
+	    	min-height: 5em;
+	    }
+
+	    #footer {
+			position:absolute;
+			bottom:0;
+			left: 0;
+			color:#fff;
+			font-size: 0.8em;
+			line-height:1.1;
+		}	
+		
+		#footer a {
+			color:#fff;
+		}
+	
+	</style>
+
+
+    <title>Ed Tech Metaphors</title>
+  </head>
+  <body>
+  <div class="jumbotron">
+  <h1 id="metaphorical" class="display-4 text-center"></h1>
+  
+  
+	</div>
+	
+	<div id="main" class="container-fluid text-center">
+			<button type="button" class="btn btn-primary btn-lg" id="gimme">Gimme Another</button>
+	</div><!-- #main -->
+	
+	<div id="footer" class="container-fluid text-center">
+		<p><a title="A Drumming and Bell Ringing Machine" href="https://flickr.com/photos/mikecogh/14310110253">A Drumming and Bell Ringing Machine</a> flickr photo by <a href="https://flickr.com/people/mikecogh">mikecogh</a> shared under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons (BY-SA) license</a></p>
+	
+	</div>
+	
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    
+    <script>
+
+	 $.backstretch("background.jpg");
+
+	function random(array) {
+	  return Math.floor(Math.random() * array.length)
+	}
+
+	function generate() {
+		  // lifted somewhat from https://glitch.com/~spark-chipmunk
+	
+		  // arrays of metaphors- if a single quote, a apostrophe needed, enter as \'
+	  let metaphor = ['baking a cake', 'a houseplant', 'running a marathon', 'raising a puppy', 'quantum physics', 'visiting an unknown country','the history of porcelain manufacture','the development of New York graffiti styles','the Corn Laws','the Loch Ness monster myth','the CB radio craze of the 70s','the Gargoyles of the Notre Dame','an all you can eat “Around the world” buffet','the growth of interest in vinyl records','a comfortable old coat','knitting','Homers The Iliad','gardening','the ecosystem of a small island','your favourite film','the structure of a typical horror film', 'chasing a cat'];
+  
+  	  // arrays of tech- if a single quote, a apostrophe needed, enter as \'
+	  let tech = ['learning analytics', 'VLE', 'blockchain', 'OER', 'MOOCs', 'personalised learning','Artificial Intelligence','open textbooks','automated assessment','MCQs','digital natives','connectivism','blogging','plagiarism detection sites','lecture capture','Flipped Learning','Facebook','academics use of Twitter','open access publishing','mobile learning','learning styles','LMS','e-portfolios','Wikipedia','student-generated content'];
+
+
+	  let options = [`Use ${metaphor[random(metaphor)]} as a metaphor for ${tech[random(tech)]}. `, 
+					 `How is ${metaphor[random(metaphor)]} an analogy for ${tech[random(tech)]}?`, 
+					 `What does ${metaphor[random(metaphor)]} tell us about ${tech[random(tech)]}?`,
+					]
+  
+	  let randomWord = Math.floor(Math.random() * options.length);
+
+
+  	  $('#metaphorical').html(options[randomWord]);
+
+	}
+	
+	$(document).ready(function(){	
+		generate();
+		
+		$( "#gimme" ).click(function() {
+			// do it again
+			generate();
+		});	
+			
+	});//ready
+
+	
+	</script>
+  </body>
+</html>

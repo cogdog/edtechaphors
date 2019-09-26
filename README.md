@@ -1,6 +1,6 @@
 # EdTech Metaphor Generator
 
-![](metaphor-screen.jpg "Generator sample screen with some kind of reference to puppies")
+[![](metaphor-screen.jpg "Generator sample screen with some kind of reference to puppies")](https://cogdog.github.io/edtechaphors/)
 
 
 [A Mashup generator made for Martin Weller](http://blog.edtechie.net/edtech/ed-tech-metaphor-generator/). Check it out! It's a practical stick. eh?

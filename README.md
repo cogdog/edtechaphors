@@ -1,7 +1,9 @@
-# edtechaphors
-A Mashup generator made for Martin Weller.
+# EdTech Metaphor Generator
 
-Check it out! It's a practical stick. eh?
+![](metaphor-screen.jpg "Generator sample screen with some kind of reference to puppies")
+
+
+[A Mashup generator made for Martin Weller](http://blog.edtechie.net/edtech/ed-tech-metaphor-generator/). Check it out! It's a practical stick. eh?
 
 https://cogdog.github.io/edtechaphors/
 

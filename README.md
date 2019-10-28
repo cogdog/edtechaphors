@@ -13,5 +13,9 @@ Learn more about this little experiment in [A Generator for Martin](https://cogd
 
 Make your own! Change out the background image. Here are ones I know of
 
-* Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/
+* First Demo by me https://cogdog.github.io/edtechaphors/
+* Open Education Metaphors by Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/
+* Modified version by John Johnston (pulling the content from a google sheet, that's neat!) http://git.johnj.info/edtechaphors/?id=1Tk-IUE8OG_InI6KjZ4GAFMm4IyJl1PoZQYzHCbm4fN8
+* Open Degree Metaphors by Martin Weller http://opendegree.edtechie.net/
+
 

@@ -32,6 +32,7 @@
 			color:#fff;
 		}
 	</style>
+	
 
 	<!-- make title your own -->
     <title>EdTech Metaphors</title>
@@ -39,7 +40,7 @@
   <body>
   <!-- where the action happens -->
   <div class="jumbotron">
-  <h1 id="metaphorical" class="display-4 text-center"></h1>
+  <h1 id="metaphorical" class="display-4 text-center">Generate an EdTech Metaphor</h1>
   </div>
 	
 	<div id="main" class="container-fluid text-center">
@@ -68,38 +69,67 @@
 	// backstrech the background image -->
 	 $.backstretch("background.jpg");
 
-	// return an index to a random element of array
-	function random(array) {
-	  return Math.floor(Math.random() * array.length)
-	}
+	// all of the stuff to be randomized is here. Create more arrays to create different structures
 
-	// generate the stuff
-	function generate() {
-	// lifted somewhat from https://glitch.com/~spark-chipmunk
 	
 	 // arrays of metaphors- if a single quote, a apostrophe needed, enter as \'
 	  let metaphor = ['baking a cake', 'a houseplant', 'running a marathon', 'raising a puppy', 'quantum physics', 'visiting an unknown country','the history of porcelain manufacture','the development of New York graffiti styles','the Corn Laws','the Loch Ness monster myth','the CB radio craze of the 70s','the Gargoyles of the Notre Dame','an all you can eat “Around the world” buffet','the growth of interest in vinyl records','a comfortable old coat','knitting','Homers The Iliad','gardening','the ecosystem of a small island','your favourite film','the structure of a typical horror film', 'chasing a cat', 'finding a big stick', 'a local castle', 'real hockey'];
   
   	  // arrays of tech- if a single quote, a apostrophe needed, enter as \'
 	  let tech = ['learning analytics', 'VLE', 'blockchain', 'OER', 'MOOCs', 'personalised learning','Artificial Intelligence','open textbooks','automated assessment','MCQs','digital natives','connectivism','blogging','plagiarism detection sites','lecture capture','Flipped Learning','Facebook','academics use of Twitter','open access publishing','mobile learning','learning styles','LMS','e-portfolios','Wikipedia','student-generated content'];
+	  	 
+	 
+	  /* Fun random names for the buttons, edit or add more */
+	 let button_names = [
+		'Make Me Another',
+		'More Metaphors, please!',
+		'Metaphor it Again',
+		'Gimme More',
+		'Crank it Again',
+	];
 
-	  // create different ways of outputting a combination of metaphors and technology
+	// return an index to a random element of array
+	function random(array) {
+	  return Math.floor(Math.random() * array.length)
+	}
+
+	function tweet_it_like_a_bluebird( chirp, bird ) {
+		// Blame/Credit Stephen Downes https://www.downes.ca/post/71841
+
+		$('#birdcage').html('<a href="https://twitter.com/intent/tweet?url=' + encodeURI(window.location.href) +'&text=' + encodeURIComponent('Another generated Edtech Metaphor\n\n' + chirp + '\n\nBlame ' + bird  + ' for') + '" target="_blank"><img src="tweet.png" alt="Tweet"></a>');
+	}
+	
+
+	// generate the stuff
+	function generate() {
+		// lifted somewhat from https://glitch.com/~spark-chipmunk
+
+		// create different ways of outputting a combination of metaphors and technology (or whatever else you create
+	  
+	  
 	  let options = [`Use ${metaphor[random(metaphor)]} as a metaphor for ${tech[random(tech)]}. `, 
 					 `How is ${metaphor[random(metaphor)]} an analogy for ${tech[random(tech)]}?`, 
 					 `What does ${metaphor[random(metaphor)]} tell us about ${tech[random(tech)]}?`,
 					]
 
-	 // update the display
-  	  $('#metaphorical').html(options[random(options)]);
+	  // generate it!
+	  var generated = options[random(options)];
+	 // update the display with place holder for a twitter button
+  	  $('#metaphorical').html(generated + '<br /><span id="birdcage"></span>');
+  	  
+  	  // add the twitter link, change the tweeted name as needed (if you must)
+  	  tweet_it_like_a_bluebird( generated, '@cogdog');
 
 	}
 	
 	$(document).ready(function(){	
-		generate();
 		
 		$( "#gimme" ).click(function() {
-			// do it again
+			// Generate a new thing
 			generate();
+			
+			// make the button name random too
+			$("#gimme").html(button_names[random(button_names)]);
 		});	
 			
 	});//ready

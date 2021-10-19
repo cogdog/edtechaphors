@@ -17,9 +17,11 @@ Make your own! Change out the background image and modify the structure of gener
 * Open Education Metaphors by Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/
 * Modified version by John Johnston (pulling the content from a google sheet, that's neat!) http://git.johnj.info/edtechaphors/?id=1Tk-IUE8OG_InI6KjZ4GAFMm4IyJl1PoZQYzHCbm4fN8
 * Open Degree Metaphors by Martin Weller http://opendegree.edtechie.net/
+* EdTech Pitch Machine by (again) Martin Weller https://edtechie.net/edtechpitch/
+* A Generator Generator (Alan goes meta) https://cogdog.github.io/edtechaphors/generatorgenerator.html
 
 
-## As if Versioning Happens
+## As if Versioning Happens by Magic
 
 * Jan 27, 2021: Added randomized button names, and a tweet this button
 * Sep 25, 2019: First version started up

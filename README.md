@@ -23,6 +23,7 @@ Make your own! Change out the background image and modify the structure of gener
 
 ## As if Versioning Happens by Magic
 
+* Oct 19, 2021: Just for fun (and to test that links work) made a generator that generates generators
 * Jan 27, 2021: Added randomized button names, and a tweet this button
 * Sep 25, 2019: First version started up
 

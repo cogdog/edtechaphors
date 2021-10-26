@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>    
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
  
 	<!-- let the styling commence -->
 	<style>
-		
+
 	    .jumbotron  {
 	    	opacity: 0.8;
 	    	margin-bottom:1em;
@@ -43,35 +43,36 @@
 	
 
 	<!-- make title your own -->
-    <title>EdTech Metaphors</title>
+    <title>Remix It Up in the H5P Kitchen</title>
   </head>
   <body>
   <!-- where the action happens -->
   <div class="jumbotron">
-  <h1 id="metaphorical" class="display-4 text-center">Generate an EdTech Metaphor</h1>
+  <h1 id="metaphorical" class="display-4 text-center">Cooking in the Kitchen... Give me some suggestions on how to Remix some H5P.</h1>
   </div>
 	
 	<div id="main" class="container-fluid text-center">
-		<button type="button" class="btn btn-primary btn-lg" id="gimme">Gimme Another</button>
+		<button type="button" class="btn btn-primary btn-lg" id="gimme">Mix me a Remix</button>
 	</div><!-- #main -->
 	
 	
 	<div id="footer" class="container-fluid text-center">
 		<p>
 		<!-- background image attribution -->
-			<a title="A Drumming and Bell Ringing Machine" href="https://flickr.com/photos/mikecogh/14310110253">A Drumming and Bell Ringing Machine</a> flickr photo by <a href="https://flickr.com/people/mikecogh">mikecogh</a> shared under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons (BY-SA) license</a><br />
+			<a href="https://flickr.com/photos/terriem/912312488">Kitchen at Green Gulch</a> flickr photo by <a href="https://flickr.com/people/terriem">Terrie Schweitzer</a> shared under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons (BY-SA) license</a> modified by Alan Levine<br />
 			<!-- code credit, thanks for keeping -->
 			quick code by <a href="http://cog.dog/"> @cogdog</a> made for <a href="http://blog.edtechie.net/">@edtechie</a> &bull; <a href="https://github.com/cogdog/edtechaphors">available for forking</a>
 		</p>
 	</div>
 	
 
-    <!--  JavaScript libs 
+   <!--  JavaScript libs 
            jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js" integrity="sha512-bXc1hnpHIf7iKIkKlTX4x0A0zwTiD/FjGTy7rxUERPZIkHgznXrN/2qipZuKp/M3MIcVIdjF4siFugoIc2fL0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     
     <script>
 	// backstrech the background image -->
@@ -120,23 +121,50 @@
 	   Create more arrays to create different mixes of things to be generated. 
 	   If a single quote, a apostrophe needed, enter as 
 	*/
+
 	
-	 // array of metaphors- 
-	  let metaphor = ['baking a cake', 'a houseplant', 'running a marathon', 'raising a puppy', 'quantum physics', 'visiting an unknown country','the history of porcelain manufacture','the development of New York graffiti styles','the Corn Laws','the Loch Ness monster myth','the CB radio craze of the 70s','the Gargoyles of the Notre Dame','an all you can eat “Around the world” buffet','the growth of interest in vinyl records','a comfortable old coat','knitting','Homers The Iliad','gardening','the ecosystem of a small island','your favourite film','the structure of a typical horror film', 'chasing a cat', 'finding a big stick', 'a local castle', 'real hockey'];
+	 // H5P content to start with, from eCampus Ontario H5P Studio or elsewhere, include HTML link
+	  let ingredients = [
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/15001" target="_blank">Insect Order (Flashcards)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/8204" target="_blank">Teacher Word (Flashcards)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/24324" target="_blank">Hydronic Piping Layout (Flashcards)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/579" target="_blank"> Growth Mindset - Developing Your Mindset (True False Question)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/16174" target="_blank">Tool Safety (True False Question)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/15983" target="_blank">45 Degree Parallel Offset (True False Question)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/26253" target="_blank">Hospital Room (Image Hotspot)</a>',
+	  	'<a href="https://h5pstudio.ecampusontario.ca/content/1811" target="_blank">Intro to Quadratics</a> (Image Hotspot)',
+	  ];
   
-  	  // array of technologies
-	  let tech = ['learning analytics', 'VLE', 'blockchain', 'OER', 'MOOCs', 'personalised learning','Artificial Intelligence','open textbooks','automated assessment','MCQs','digital natives','connectivism','blogging','plagiarism detection sites','lecture capture','Flipped Learning','Facebook','academics use of Twitter','open access publishing','mobile learning','learning styles','LMS','e-portfolios','Wikipedia','student-generated content'];
+  	  // arrays of ways to remix
+	  let mixing = [
+	  
+	  	'Make the feedback as if it came from a kind aunt',
+	  	'Change it another language',
+	  	'Provide only wrong answers',
+	  	'Make it take place in a different time period',
+	  	'Swap the content for a different discipline',
+	  	'Turn it into something like TV Game show',
+	  	'Change the interface language',
+	  	'Change images to something abstract',
+	  	'Make it much more simple',
+	  	'Make it much more complex',
+	  	'Create more of a story to set it up',
+	  	'Provide a different content',
+	  	'Add more options or change the responses to be more verbose',
+	  	'Set it up as if it takes place in the Victorian era'
+	  ];
 	  	 
+	 
 	  /* Fun random names for the buttons, edit or add more */
 	 let button_names = [
 		'Make Me Another',
-		'More Metaphors, please!',
-		'Metaphor it Again',
+		'More Mixes, please!',
+		'Remix it Again',
 		'Gimme More',
-		'Crank it Again',
+		'One More Time',
 	];
-
 	
+
 	// generate the stuff
 	// lifted somewhat from https://glitch.com/~spark-chipmunk
 	function generate() {
@@ -149,12 +177,12 @@
 	   
 	   The more you add here the more varied will be the responses.
 	*/
-	  
+
 	  let options = [
-	  	`Use ${metaphor[random(metaphor)]} as a metaphor for ${tech[random(tech)]}. `, 
-		`How is ${metaphor[random(metaphor)]} an analogy for ${tech[random(tech)]}?`, 
-		`What does ${metaphor[random(metaphor)]} tell us about ${tech[random(tech)]}?`,
-		];
+	  	`Start with ${ingredients[random(ingredients)]}. Download the H5P and change it up: ${mixing[random(mixing)]}.`, 
+		`Get a copy of ${ingredients[random(ingredients)]} and modify it:  ${mixing[random(mixing)]}. `, 
+		`Take ${ingredients[random(ingredients)]} and make it your own:  ${mixing[random(mixing)]}.`
+		]
 
 	  // generate it!
 	  var generated = options[random(options)];
@@ -164,7 +192,7 @@
   	  
   	  // add the teet this button, change the tweeted name as needed (if you must)
   	  // and provide the name for the kind of thing generated
-  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'EdTech Metaphor');
+  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'H5P Remix Idea');
 
 	}
 	
@@ -181,7 +209,6 @@
 			
 	});//ready
 
-	
 	</script>
   </body>
 </html>

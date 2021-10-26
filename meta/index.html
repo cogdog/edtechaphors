@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>    
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,40 +43,37 @@
 	
 
 	<!-- make title your own -->
-    <title>EdTech Metaphors</title>
+    <title>A Generator of generators</title>
   </head>
   <body>
   <!-- where the action happens -->
   <div class="jumbotron">
-  <h1 id="metaphorical" class="display-4 text-center">Generate an EdTech Metaphor</h1>
+  <h1 id="metaphorical" class="display-4 text-center">Looking for Examples of Generators?</h1>
   </div>
 	
 	<div id="main" class="container-fluid text-center">
-		<button type="button" class="btn btn-primary btn-lg" id="gimme">Gimme Another</button>
+		<button type="button" class="btn btn-primary btn-lg" id="gimme">Generate One</button>
 	</div><!-- #main -->
 	
 	
 	<div id="footer" class="container-fluid text-center">
 		<p>
 		<!-- background image attribution -->
-			<a title="A Drumming and Bell Ringing Machine" href="https://flickr.com/photos/mikecogh/14310110253">A Drumming and Bell Ringing Machine</a> flickr photo by <a href="https://flickr.com/people/mikecogh">mikecogh</a> shared under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons (BY-SA) license</a><br />
+			<a title="Martin branded generator" href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1422567">Pixabay image</a>  by <a href="https://pixabay.com/users/terimakasih0-624267/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1422567">Dean Moriarty</a> remixed by Alan Levine with <a href="https://fr.m.wikipedia.org/wiki/Fichier:Martin_guitar_logo.png/">Martin Guitar Logo</a> a Wikimedia Commons public domain image<br />
 			<!-- code credit, thanks for keeping -->
 			quick code by <a href="http://cog.dog/"> @cogdog</a> made for <a href="http://blog.edtechie.net/">@edtechie</a> &bull; <a href="https://github.com/cogdog/edtechaphors">available for forking</a>
 		</p>
 	</div>
-	
 
-    <!--  JavaScript libs 
            jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js" integrity="sha512-bXc1hnpHIf7iKIkKlTX4x0A0zwTiD/FjGTy7rxUERPZIkHgznXrN/2qipZuKp/M3MIcVIdjF4siFugoIc2fL0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+        
     <script>
 	// backstrech the background image -->
-	 $.backstretch("background.jpg");
-
+	 $.backstretch("martin.jpg");
 
 	// general purpose function to return a random index to input array
 	function random(array) {
@@ -120,23 +117,25 @@
 	   Create more arrays to create different mixes of things to be generated. 
 	   If a single quote, a apostrophe needed, enter as 
 	*/
-	
-	 // array of metaphors- 
-	  let metaphor = ['baking a cake', 'a houseplant', 'running a marathon', 'raising a puppy', 'quantum physics', 'visiting an unknown country','the history of porcelain manufacture','the development of New York graffiti styles','the Corn Laws','the Loch Ness monster myth','the CB radio craze of the 70s','the Gargoyles of the Notre Dame','an all you can eat “Around the world” buffet','the growth of interest in vinyl records','a comfortable old coat','knitting','Homers The Iliad','gardening','the ecosystem of a small island','your favourite film','the structure of a typical horror film', 'chasing a cat', 'finding a big stick', 'a local castle', 'real hockey'];
+
+	 // arrays of metaphors sites, each linked
+	  let machines = ['<a href="https://cogdog.github.io/edtechaphors/" target="_blank">Alan\'s First Example</a>', '<a href="http://metaphor.edtechie.net/" target="_blank">Open Education by Metaphors (featuring Telio!)</a>', '<a href="http://opendegree.edtechie.net/" target="_blank">Open Degree Metaphors</a>', '<a href="http://git.johnj.info/edtechaphors/?id=1Tk-IUE8OG_InI6KjZ4GAFMm4IyJl1PoZQYzHCbm4fN8" target="_blank">John Johnston Mixes It Up</a>', '<a href="https://edtechie.net/edtechpitch/" target="_blank">EdTech Pitch Machine</a>'];
   
-  	  // array of technologies
-	  let tech = ['learning analytics', 'VLE', 'blockchain', 'OER', 'MOOCs', 'personalised learning','Artificial Intelligence','open textbooks','automated assessment','MCQs','digital natives','connectivism','blogging','plagiarism detection sites','lecture capture','Flipped Learning','Facebook','academics use of Twitter','open access publishing','mobile learning','learning styles','LMS','e-portfolios','Wikipedia','student-generated content'];
+  	  // arrays of prompts, nags, calls to actio
+	  let nudges = ['You know you want one', 'Fork this and go!', 'If you have to ask...', 'Woah, Neo', 'Mix it up!', 'Generators are the netflix of... oh forget it', 'Thanks for the inspiration, Martin!', 'Fonzie says Aaaaaaaay', 'Git your own generator today', 'Prrrrrrrr goes the machine', 'It is pretty darned easy', 'Do you feel the vibe?'];
 	  	 
+	 
 	  /* Fun random names for the buttons, edit or add more */
 	 let button_names = [
-		'Make Me Another',
-		'More Metaphors, please!',
+		'Generate More',
+		'Generate a Generator',
 		'Metaphor it Again',
 		'Gimme More',
 		'Crank it Again',
 	];
 
 	
+
 	// generate the stuff
 	// lifted somewhat from https://glitch.com/~spark-chipmunk
 	function generate() {
@@ -151,10 +150,14 @@
 	*/
 	  
 	  let options = [
-	  	`Use ${metaphor[random(metaphor)]} as a metaphor for ${tech[random(tech)]}. `, 
-		`How is ${metaphor[random(metaphor)]} an analogy for ${tech[random(tech)]}?`, 
-		`What does ${metaphor[random(metaphor)]} tell us about ${tech[random(tech)]}?`,
-		];
+		`Give ${machines[random(machines)]} a few clicks ... ${nudges[random(nudges)]} `, 
+		`Neato! ${machines[random(machines)]}? Martin might say \"${nudges[random(nudges)]}?\"`, 
+		`How can you resist ${machines[random(machines)]}? Go yell  \"${nudges[random(nudges)]}\"!`, 
+		`Holy Meta Metaphors, Batman! ${machines[random(machines)]} ${nudges[random(nudges)]}!`, 	
+		`Drumroll please-- try ${machines[random(machines)]}`,
+		`I like ${machines[random(machines)]}. You? ${nudges[random(nudges)]}`,
+		`Power up ${machines[random(machines)]} and see what happens. ${nudges[random(nudges)]}`
+		]
 
 	  // generate it!
 	  var generated = options[random(options)];
@@ -162,9 +165,8 @@
 	 // add place holder for a twitter button
   	  $('#metaphorical').html(generated + '<br /><span id="birdcage"></span>');
   	  
-  	  // add the teet this button, change the tweeted name as needed (if you must)
-  	  // and provide the name for the kind of thing generated
-  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'EdTech Metaphor');
+  	  // add the twitter link, change the tweeted name as needed (if you must)
+  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'Random Generator');
 
 	}
 	

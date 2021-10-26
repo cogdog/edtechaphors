@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>    
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,7 @@
           Fan by kareemov CC BY from the Noun Project 
           https://thenounproject.com/term/fan/2123165 -->
     <link rel="shortcut icon" type="image/png" href="bigfan.png"/>
- 
+
 	<!-- let the styling commence -->
 	<style>
 		
@@ -43,28 +43,27 @@
 	
 
 	<!-- make title your own -->
-    <title>EdTech Metaphors</title>
+    <title>Creative Prompt Machine</title>
   </head>
   <body>
   <!-- where the action happens -->
   <div class="jumbotron">
-  <h1 id="metaphorical" class="display-4 text-center">Generate an EdTech Metaphor</h1>
+  <h1 id="metaphorical" class="display-4 text-center">Need a Prompt for a Creative Act?</h1>
   </div>
 	
 	<div id="main" class="container-fluid text-center">
-		<button type="button" class="btn btn-primary btn-lg" id="gimme">Gimme Another</button>
+		<button type="button" class="btn btn-primary btn-lg" id="gimme">Turn the Machine On</button>
 	</div><!-- #main -->
 	
 	
 	<div id="footer" class="container-fluid text-center">
 		<p>
 		<!-- background image attribution -->
-			<a title="A Drumming and Bell Ringing Machine" href="https://flickr.com/photos/mikecogh/14310110253">A Drumming and Bell Ringing Machine</a> flickr photo by <a href="https://flickr.com/people/mikecogh">mikecogh</a> shared under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons (BY-SA) license</a><br />
+			<a href="https://flickr.com/photos/cogdog/19071702529">Links Power This Machine</a> flickr photo by <a href="https://flickr.com/people/cogdog">cogdogblog</a> shared under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons (BY) license</a><br />
 			<!-- code credit, thanks for keeping -->
 			quick code by <a href="http://cog.dog/"> @cogdog</a> made for <a href="http://blog.edtechie.net/">@edtechie</a> &bull; <a href="https://github.com/cogdog/edtechaphors">available for forking</a>
 		</p>
 	</div>
-	
 
     <!--  JavaScript libs 
            jQuery first, then Popper.js, then Bootstrap JS -->
@@ -120,27 +119,140 @@
 	   Create more arrays to create different mixes of things to be generated. 
 	   If a single quote, a apostrophe needed, enter as 
 	*/
-	
-	 // array of metaphors- 
-	  let metaphor = ['baking a cake', 'a houseplant', 'running a marathon', 'raising a puppy', 'quantum physics', 'visiting an unknown country','the history of porcelain manufacture','the development of New York graffiti styles','the Corn Laws','the Loch Ness monster myth','the CB radio craze of the 70s','the Gargoyles of the Notre Dame','an all you can eat “Around the world” buffet','the growth of interest in vinyl records','a comfortable old coat','knitting','Homers The Iliad','gardening','the ecosystem of a small island','your favourite film','the structure of a typical horror film', 'chasing a cat', 'finding a big stick', 'a local castle', 'real hockey'];
-  
-  	  // array of technologies
-	  let tech = ['learning analytics', 'VLE', 'blockchain', 'OER', 'MOOCs', 'personalised learning','Artificial Intelligence','open textbooks','automated assessment','MCQs','digital natives','connectivism','blogging','plagiarism detection sites','lecture capture','Flipped Learning','Facebook','academics use of Twitter','open access publishing','mobile learning','learning styles','LMS','e-portfolios','Wikipedia','student-generated content'];
-	  	 
+  	  
+  	  // arrays of acts of creativity 
+  	   let creative = [
+  	   	'Write a Haiku',
+  	   	'Draw with a crayon',
+  	   	'Film a TV commercial',
+  	   	'Make a collage',
+  	   	'Make a comic strip',
+  	   	'Write a sonnet',
+  	   	'Create an acrostic poem',
+  	   	'Write a tweet length tale',
+  	   	'Sing a ballad',
+  	   	'Write a limmerick',
+  	   	'Record a love song',
+  	   	'Develop a French dialogue',
+  	   	'Pitch a TV game show',
+  	   	'Develop an action film plot'
+  	   
+  	   ];
+  	   
+  	   // one character
+  	   let character1 = [
+			'a lonely martian',
+			'William Shakespeare',
+			'Wilma Flintstone',
+			'Kamala Harris',
+			'Lisa Simpson',
+			'your weird uncle Mel',
+			'Katniss Everdeen',
+			'a Grasshopper',
+			'Hermione Granger',
+			'Doc Brown',
+			'Lassie',
+			'Moses',
+			'Confuscius',
+			'Ada Lovelace',
+			'Eeyore',
+			'Abraham Lincoln',
+			'Elvis Presley',
+			'Harry Houdini',
+			'Ghengis Kham',
+			'Bob Dylan',
+			'a potato',
+			'Lady Gaga'
+			];
+  	   	
+  	   // another character
+  	   let character2 = [
+
+		   'Albert Einstein',
+		   'you',
+		   'your best childhood friend',
+		   'Dr Phil',
+		   'Serena Williams',
+		   'Frida Kahlo',
+		   'Hank Aaron',
+		   'Wayne Gretzky',
+		   'Madonna',
+		   'Puff the Magic Dragon',
+		   'the wicked witch of the west',
+		   'a sad wombat',
+		   'Fonzie',
+		   'Kermit the Frog',
+		   'the shark from Jaws',
+		   'Bugs Bunny',
+		   'Tweety Bird',
+		   'Eleanor Roosevelt',
+		   'Michelle Obama',
+		   'Mr Spock'
+  	   ];
+  	   
+  	   // a location
+  	   let places = [
+  	   		'the surface of the moon',
+  	   		'Easter Island',
+  	   		'a secluded beach',
+  	   		'the Amazon rain forest',
+  	   		'Times Square',
+  	   		'the London Bridge',
+  	   		'the bottom of the ocean',
+  	   		'the Sahara Desert',
+  	   		'Fargo, North Dakota',
+  	   		'the outer ring of Saturn',
+  	   		'Machu Piccu',
+  	   		'the trunk of a 1972 Camaro',
+  	   		'the top of Mount Everest',
+  	   		'the Australian Outback',
+  	   		'the Great Wall',
+  	   		'a purple padded room',
+  	   		'a secret government facility',
+  	   		'Area 51',
+  	   		'a hidden room inside a Mayan pyramid',
+  	   		'floating down the Yellow River on a raft',
+  	   		'a creepy dark basement',
+  	   		'a treehouse',
+  	   		'the bottom of the Grand Canyon',
+  	   		'the North Pole'
+  	   	];
+  	   	
+  	   	// things that might happen
+  	   	let actions = [
+  	   		'plot the overthrow of an oppressive dictator',
+  	   		'enjoy a picnic of cheese and crackers',
+  	   		'fall into a coma',
+  	   		'flush Facebook down the toilet',
+  	   		'board a flying saucer',
+  	   		'eat all of the world\'s Halloween candy',
+  	   		'discover a portal to another dimension',
+  	   		'make radio contact with space travelers from Andromeda',
+  	   		'fall asleep to the sound of classical music',
+  	   		'discover an old treasure map',
+  	   		'fall into a chamber of snakes (yes Indy, snakes)',
+  	   		'listen blissfully to the Reykjavik orchestra',
+  	   		'find that time has stopped',
+  	   		'make pancakes in the kitchen',
+  	   		'travel to the 12th century',
+  	   		'help stir the boling cauldron of goo',
+  	   		'meet Julius Caesar riding a motorbike'
+  	   	];
+  	   
+	 
 	  /* Fun random names for the buttons, edit or add more */
 	 let button_names = [
-		'Make Me Another',
-		'More Metaphors, please!',
-		'Metaphor it Again',
-		'Gimme More',
-		'Crank it Again',
+		'Gimme Something Different',
+		'Generate a new one',
+		'Do it Again',
+		'Yuck. Try again',
+		'Oh no, redo!'
 	];
 
-	
+
 	// generate the stuff
 	// lifted somewhat from https://glitch.com/~spark-chipmunk
 	function generate() {
-		
 
 	/* create different ways of outputting a combination of arrays above.   
 	   Each element includes all of the text in backticks (not single quotes!)
@@ -151,10 +263,12 @@
 	*/
 	  
 	  let options = [
-	  	`Use ${metaphor[random(metaphor)]} as a metaphor for ${tech[random(tech)]}. `, 
-		`How is ${metaphor[random(metaphor)]} an analogy for ${tech[random(tech)]}?`, 
-		`What does ${metaphor[random(metaphor)]} tell us about ${tech[random(tech)]}?`,
-		];
+		`${creative[random(creative)]} where ${character1[random(character1)]} and  ${character2[random(character2)]} somehow end up at ${places[random(places)]} where they  ${actions[random(actions)]}.`, 
+		`${creative[random(creative)]} that has  ${character2[random(character2)]} go to ${places[random(places)]} only to find waiting there is ${character1[random(character1)]}. They decide to ${actions[random(actions)]}.`,
+		`${creative[random(creative)]} where ${character2[random(character2)]} falls in love with ${character1[random(character1)]} while at ${places[random(places)]}.`,
+		`${creative[random(creative)]} for that time ${character2[random(character2)]} went to ${places[random(places)]} only to discover to get home they had to ${actions[random(actions)]}.`,
+		`${creative[random(creative)]} that takes place at ${places[random(places)]} and pits ${character1[random(character1)]} against ${character2[random(character2)]} in a contest to  ${actions[random(actions)]}.`
+		]
 
 	  // generate it!
 	  var generated = options[random(options)];
@@ -164,10 +278,9 @@
   	  
   	  // add the teet this button, change the tweeted name as needed (if you must)
   	  // and provide the name for the kind of thing generated
-  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'EdTech Metaphor');
+  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'Creative Prompt');
 
 	}
-	
 	// set up the generate button
 	$(document).ready(function(){	
 		

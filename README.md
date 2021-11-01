@@ -30,6 +30,8 @@ But these ones are part of this repo, so you can actually **contribute** to them
 * Creative Prompt Machine https://cogdog.github.io/edtechaphors/create
 * Remix It Up in the H5P Kitchen https://cogdog.github.io/edtechaphors/h5p
 
+See also [how the Creative Prompt machine was used as a DS106 Daily Create](https://daily.ds106.us/tdc3581/).
+
 ## Hardly Passing For Documentation
 
 You will need a bit of HTML knowledge to change the title, initial prompt, and adjust credits for the background image. All of the generating magic is done in JavaScript. Create arrays for all sets of phrases you want to have mixed up, this is the setup for the [original EdTech Metaphors one](https://cogdog.github.io/edtechaphors/)

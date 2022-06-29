@@ -29,6 +29,7 @@ But these ones are part of this repo, so you can actually **contribute** to them
 * A Generator Generator (Alan goes meta) https://cogdog.github.io/edtechaphors/meta
 * Creative Prompt Machine https://cogdog.github.io/edtechaphors/create
 * Remix It Up in the H5P Kitchen https://cogdog.github.io/edtechaphors/h5p
+* Ridiculous Word Analogies https://cogdog.github.io/edtechaphors/analogies
 
 See also [how the Creative Prompt machine was used as a DS106 Daily Create](https://daily.ds106.us/tdc3581/).
 

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    
+    <!-- big fan of your favicon 
+          Fan by kareemov CC BY from the Noun Project 
+          https://thenounproject.com/term/fan/2123165 -->
+    <link rel="shortcut icon" type="image/png" href="bigfan.png"/>
+
+	<!-- let the styling commence -->
+	<style>
+		
+	    .jumbotron  {
+	    	opacity: 0.8;
+	    	margin-bottom:1em;
+	    	min-height: 5em;
+	    }
+	    
+	    /* longer generated messages might need smaller font size */
+	    #metaphorical {
+	    	font-size:4vw;
+	    }
+
+	    #footer {
+			position:absolute;
+			bottom:0;
+			left: 0;
+			color:#fff;
+			font-size: 0.8em;
+			line-height:1.1;
+		}	
+		
+		#footer a {
+			color:#fff;
+		}
+		.backstretch {
+    		filter: brightness(40%);
+		}
+	</style>
+	
+
+	<!-- make title your own -->
+    <title>Word Analogy Mixer</title>
+  </head>
+  <body>
+  <!-- where the action happens -->
+  <div class="jumbotron">
+  <p id="metaphorical" class="display-4 text-center">Do You Remember Word Analogies on Exams?</p>
+  <p>You know, those mind bending questions like "Redwood is to Transistor as __________ is to Orange Peel"? This machine makes even weirder (and non-sensical) ones....
+  </div>
+	
+	<div id="main" class="container-fluid text-center">
+		<button type="button" class="btn btn-primary btn-lg" id="gimme">Mix Me an Anaology</button>
+	</div><!-- #main -->
+	
+	
+	<div id="footer" class="container-fluid text-center">
+		<p>
+		<!-- background image attribution -->
+			<a href="https://flickr.com/photos/30478819@N08/51038121971">Standardized test exams form with answers bubbled</a> flickr photo by <a href="https://flickr.com/people/30478819@N08">wuestenigel</a> shared under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons (BY) license</a><br />
+			<!-- code credit, thanks for keeping -->
+			 code by <a href="http://cog.dog/"> @cogdog</a> and is <a href="https://github.com/cogdog/edtechaphors">available for forking</a>
+		</p>
+	</div>
+
+    <!--  JavaScript libs 
+           jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js" integrity="sha512-bXc1hnpHIf7iKIkKlTX4x0A0zwTiD/FjGTy7rxUERPZIkHgznXrN/2qipZuKp/M3MIcVIdjF4siFugoIc2fL0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+	// backstrech the background image -->
+	 $.backstretch("background.jpg");
+
+
+	// general purpose function to return a random index to input array
+	function random(array) {
+	  return Math.floor(Math.random() * array.length)
+	}
+
+	// Replaces an HTML href with the link text followed by URL 
+	// to make tweetable for array elements that have links in them
+	function href2text(str) {
+		// pattern for matching href
+		let regexpHref = /<a[^>]+href=\"(.*?)\"[^>]*>(.*?)<\/a>/gi;
+		
+		// get matches
+		let match = regexpHref.exec(str);
+		
+		if (match) {
+			// get the replacement
+			do {
+				 replacement = `${match[2]} ${match[1]}`;
+			} while((match = regexpHref.exec(str)) !== null);
+
+		   // replace the match string with the replacement
+			return( str.replace(regexpHref, replacement));
+		} else {
+			return (str);
+		}
+	}
+
+	// generate the link for a tweet this button
+	//    var chirp: the message
+	//    var bird: twitter name to credit
+	//    var birdsong: name for this kind of generators
+	// Blame/Credit Stephen Downes https://www.downes.ca/post/71841
+	function tweet_it_like_a_bluebird( chirp, bird, birdsong ) {
+		
+		$('#birdcage').html('<a href="https://twitter.com/intent/tweet?url=' + encodeURI(window.location.href) +'&text=' + encodeURIComponent('Another generated ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + bird  + ' for') + '" target="_blank"><img src="tweet.png" alt="Tweet"></a>');
+	}
+
+
+	/* All of the stuff to be randomized is created as arrays. 
+	   Create more arrays to create different mixes of things to be generated. 
+	   If a single quote, a apostrophe needed, enter as 
+	*/
+  	  
+  	  // arrays of acts of creativity 
+  	   let first = [
+  	   	'Crayon',
+  	   	'Commercial',
+  	   	'Collage',
+  	   	'Sonnet',
+  	   	'Poem',
+  	   	'Ballad',
+  	   	'Limmerick',
+  	   	'Song',
+  	   	'Game show',
+  	   	'Plot',
+		'Zebra',
+		'Farm',
+		'Tiger',
+		'Tame',
+		'Grazing',
+		'Love',
+		'Tears',
+		'Crying',
+		'Disease',
+		'Drama',
+		'Math',
+		'Square',
+		'Teaching',
+		'School',
+		'Complicated',
+		'Snob',
+		'Millionaire',
+		'Title',
+		'Castle',
+		'Sophistication',
+		'Centimeter',
+		'Gauge',
+		'Volt',
+		'Measure',
+		'Milimeter',
+		'Calender',
+		'Sun',
+		'Quarter',
+		'Date',
+		'Week',
+		'Stomach',
+		'Double',
+		'Big',
+		'Hip',
+		'Belly',
+		'Large',
+		'Everywhere',
+		'All',
+		'Less',
+		'Some',
+		'Book',
+		'Shakespeare',
+		'Poem',
+		'Prose',
+		'Drama',
+		'Orange',
+		'Tree',
+		'Fruit',
+		'Plume',
+		'Potato' 	   
+  	   ];
+  	   
+  	   // one character
+  	   let second = [
+			'uncle ',
+			'grasshopper',
+			'sorrow',
+			'horse',
+			'geometry',
+			'meter',
+			'month',
+			'ankle',
+			'classic',
+			'many',
+			'fruit',
+			'chapter',
+			'money',
+			'pear',
+			'warm',
+			'fish',
+			'passion',
+			'nowhere',
+			'bar',
+			'headphone',
+			'chair',
+			'board',
+			'cracker',
+			'lamp',
+			'plate',
+			'flower',
+			'bee',
+			'raven',
+			'crab',
+			'blue',
+			'cafe',
+			'island',
+			'cake',
+			'pint',
+			'clock',
+			'grill',
+			'manual',
+			'toenail'
+		];
+  	   	
+  	   // another character
+  	   let third = [
+			'friend',
+			'dragon',
+			'witch',
+			'wombat',
+			'wicked',
+			'monkey',
+			'frog',
+			'shark',
+			'bunny',
+			'bird',
+			'laughing',
+			'hyena',
+			'equation',
+			'sewer',
+			'gram',
+			'pound',
+			'cage',
+			'pool',
+			'hay',
+			'tree',
+			'shingle',
+			'snicker',
+			'flicker',
+			'wave',
+			'surfboard',
+			'twelve',
+			'shoulder',
+			'eyeball',
+			'bellybutton',
+			'bag',
+			'dinosaur',
+			'bottle',
+			'plug',
+			'switch',
+			'cookie tin',
+			'kneecap',
+			'hairbrush',
+			'margarine',
+			'hum',
+			'hummingbird',
+			'flamingo',
+			'turtle'
+ 	   ];
+ 	   
+  	   // a location
+  	   let fourth = [
+  	   		'moon',
+  	   		'beach',
+  	   		'forest',
+  	   		'town square',
+  	   		'bridge',
+  	   		'ocean',
+  	   		'desert',
+  	   		'government',
+  	   		'pyramid',
+  	   		'raft',
+  	   		'basement',
+  	   		'treehouse',
+			 'happiness',
+			'teeth',
+			'luck',
+			'comedy',
+			'lazy',
+			'dog',
+			'savannah',
+			'wild',
+			'bird',
+			'safari',
+			'symmetrical',
+			'algebra',
+			'equal',
+			'study',
+			'fitting',
+			'round',
+			'filthy',
+			'rat',
+			'useful',
+			'stench',
+			'street',
+			'weight',
+			'watt',
+			'nickel',
+			'kilogram',
+			'balance',
+			'year',
+			'four',
+			'three',
+			'number',
+			'counting',
+			'chest',
+			'wrist',
+			'shoulders',
+			'small',
+			'heel',
+			'child',
+			'old',
+			'small',
+			'future',
+			'baby',
+			'more',
+			'enough',
+			'legs',
+			'none',
+			'sometimes',
+			'scolding',
+			'story',
+			'radioshow',
+			'dance',
+			'song',
+			'tax',
+			'government',
+			'alcohol',
+			'beer',
+			'paying',
+			'fee',
+			'apple',
+			'tea',
+			'cold',
+			'summer',
+			'sweater',
+			'temperature',
+			'jalapeño',
+			'jealousy',
+			'green',
+			'tree',
+			'seeing',
+			'pretty',
+			'mostly',
+			'everywhere',
+			'often',
+			'never',
+			'always',
+			'bandit',
+			'insult',
+			'boss',
+			'sweet',
+			'man',
+			'dirt',
+			'rabbit',
+			'parsley'
+  	   	];
+  	   	
+ 	 let points = [
+		'10',
+		'75',
+		'25',
+		'99',
+		'all the'
+	];
+ 	   	
+ 	 let teaser = [
+		'Complete the word analogy.',
+		'Can you pass the SAT?',
+		'Do you have the skills?',
+		'Do you know how to complete a word analogy?',
+		'Try this! '
+	];
+
+
+	   	
+  	   	
+  	   	
+	 
+	  /* Fun random names for the buttons, edit or add more */
+	 let button_names = [
+		'Try Again',
+		'Analogize a new one',
+		'Do it Again',
+		'Yuck. Try again',
+		'Too easy, redo!'
+	];
+
+
+	// generate the stuff
+	// lifted somewhat from https://glitch.com/~spark-chipmunk
+	function generate() {
+
+	/* create different ways of outputting a combination of arrays above.   
+	   Each element includes all of the text in backticks (not single quotes!)
+	   and use the structure ${arrayname[random(arrayname)]} to insert a random
+	   item from a specified array.
+	   
+	   The more you add here the more varied will be the responses.
+	*/
+	  
+	  let options = [
+	  	`<strong>${first[random(first)]}</strong> is to <strong>${second[random(second)]}</strong> as <strong>${third[random(third)]}</strong> is to ________________`,
+	  	`<strong>${first[random(first)]}</strong> is to <strong>${second[random(second)]}</strong> as ________________ is to <strong>${fourth[random(fourth)]}</strong>`,
+	  	`<strong>${first[random(first)]}</strong> is to ________________ as <strong>${third[random(third)]}</strong> is to <strong>${fourth[random(fourth)]}</strong>`,
+	  	`________________ is to <strong>${second[random(second)]}</strong> as <strong>${third[random(third)]}</strong> is to <strong>${fourth[random(fourth)]}</strong>`,
+		]
+
+	  // generate it!
+	  var generated = options[random(options)];
+
+	 // update the metaphoe
+  	  $('#metaphorical').html(teaser[random(teaser)] + ' (' + points[random(points)] + ' points)</p><p>' + generated + '<br /><span id="birdcage"></span></p>');
+  	  
+  	  // add the teet this button, change the tweeted name as needed (if you must)
+  	  // and provide the name for the kind of thing generated
+  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'Randomized Word Analogy');
+
+	}
+	// set up the generate button
+	$(document).ready(function(){	
+		
+		$( "#gimme" ).click(function() {
+			// Generate a new thing
+			generate();
+			
+			// make the button name random too
+			$("#gimme").html(button_names[random(button_names)]);
+		});	
+			
+	});//ready
+
+	
+	</script>
+  </body>
+</html>

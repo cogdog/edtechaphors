@@ -14,7 +14,7 @@ Learn more about this little experiment in [A Generator for Martin](https://cogd
 Make your own! Change out the background image and modify the structure of generated phrases. Here are ones I know of
 
 
-* Open Education Metaphors by Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/
+* Open Education Metaphors by Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/ and [now an entire BOOK](http://blog.edtechie.net/books/metaphors-of-ed-tech-is-out/) that even features this tool
 * Modified version by John Johnston (pulling the content from a google sheet, that's neat!) http://git.johnj.info/edtechaphors/?id=1Tk-IUE8OG_InI6KjZ4GAFMm4IyJl1PoZQYzHCbm4fN8
 * EdTech Metaphor Generator auf deutsch übersetzt/ angepasst by Nele Hirsch https://metaphernbot.glitch.me/
 * Open Degree Metaphors by Martin Weller http://opendegree.edtechie.net/
@@ -30,6 +30,7 @@ But these ones are part of this repo, so you can actually **contribute** to them
 * Creative Prompt Machine https://cogdog.github.io/edtechaphors/create
 * Remix It Up in the H5P Kitchen https://cogdog.github.io/edtechaphors/h5p
 * Ridiculous Word Analogies https://cogdog.github.io/edtechaphors/analogies
+* A new version of Martin's Ed tech Metaphors in case he ever decides to update (more random fun, button names, tweet button) https://cogdog.github.io/edtechaphors/martin 
 
 See also [how the Creative Prompt machine was used as a DS106 Daily Create](https://daily.ds106.us/tdc3581/).
 
@@ -73,9 +74,32 @@ The second level of randomness is done by creating a set of different sentences 
 		];
 The more of these you make, the more random your generator becomes (3 is a minimum, 5 or more is better, 10 is just wildly fantastic).
 
+And more random fun, you can also randomize the labels of the remix button:
+
+        /* Fun random names for the buttons, edit or add more */
+		 let button_names = [
+			'Make Me Another',
+			'More Metaphors, please!',
+			'Metaphor it Again',
+			'Gimme More',
+			'Crank it Again',
+		];
+
+And you can customize as well the magic that generates a tweeted version of a mix, including a name to mention, and a name for the thing being metaphor-
+
+     // add the teet this button, change the tweeted name as needed (if you must)
+  	 // and provide the name for the kind of thing generated
+  	 tweet_it_like_a_bluebird( generated, '@cogdog', 'EdTech Metaphor');
+
+Recommended attribution: 
+
+> "<#title#>" by Creative Commons is licensed under CC BY 4.0. Available at    
+> https://github.com/creativecommons/cc-cert-edu/blob/master/contents/<#unit#>/README.md
+
+
 ## As if Versioning Happens by Magic
 
-* Oct26, 2021: Updated Bootstrap, jQuery, Backstretch.js versions, tweet code extracts URL from HTML href links in a generated message, re-organized code and fitted with more descriptive comments, created 2 more demos
+* Oct 26, 2021: Updated Bootstrap, jQuery, Backstretch.js versions, tweet code extracts URL from HTML href links in a generated message, re-organized code and fitted with more descriptive comments, created 2 more demos
 * Oct 19, 2021: Just for fun (and to test that links work) made a generator that generates generators
 * Jan 27, 2021: Added randomized button names, and a tweet this button
 * Sep 25, 2019: First version started up

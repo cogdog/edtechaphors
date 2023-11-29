@@ -23,14 +23,16 @@ Make your own! Change out the background image and modify the structure of gener
 
 You can easily download this repo make your own copy, and hoist to your own web server or any place you can publish HTML to the web. That's your own generator, which is nice.
 
-But these ones are part of this repo, so you can actually **contribute** to them by forking a copy (or just going to the index.html in any and click the edit button, this will generate a copy). Push the changes my way, please, make my day! Your additions will make these generators more interesting!
+There are more as part of this repo or as Alan feels like rolling out new ones. You can actually **contribute** to them by forking a copy (or just going to the index.html in any and click the edit button, this will generate a copy). Push the changes my way, please, make my day! Your additions will make these generators more interesting!
 
 * Original (Extra Crispy?) EdTech Metaphors https://cogdog.github.io/edtechaphors/
 * A Generator Generator (Alan goes meta) https://cogdog.github.io/edtechaphors/meta
 * Creative Prompt Machine https://cogdog.github.io/edtechaphors/create
 * Remix It Up in the H5P Kitchen https://cogdog.github.io/edtechaphors/h5p
 * Ridiculous Word Analogies https://cogdog.github.io/edtechaphors/analogies
-* A new version of Martin's Ed tech Metaphors in case he ever decides to update (more random fun, button names, tweet button) https://cogdog.github.io/edtechaphors/martin 
+* A new version of Martin's Edrech Metaphors in case he ever decides to update (more random fun, button names, tweet button) https://cogdog.github.io/edtechaphors/martin 
+* English Lit Dissertations of the Pandemic Era https://cogdog.github.io/edtechaphors/pandemiclitdiss/
+* Everyone is Rolling out an AI Named Q https://cogdog.github.io/edtechaphors/q/
 
 See also [how the Creative Prompt machine was used as a DS106 Daily Create](https://daily.ds106.us/tdc3581/).
 

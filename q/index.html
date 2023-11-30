@@ -154,12 +154,13 @@
 		}
 	}
 	
-	function tweet_it_like_a_bluebird( chirp, bird, birdsong ) {
+	function share_it_like_a_bluebird( chirp, bird, tusk, birdsong ) {
 	
-		share_text = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + bird  + ' for');
+		share_text_tweet = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + bird  + ' for');
+		share_text_toot = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + tusk  + ' for');
 		share_url = encodeURI(window.location.href);
 		
-		$('#birdcage').html('<a href="https://mastodonshare.com/?text='+ share_text + '&url='+ share_url +'" target="_blank" class="btn btn-dark">'  + get_social_icon('mastodon', 18) + ' Mastodon</a> &nbsp; <a href="https://twitter.com/intent/tweet?url=' + share_url +'&text=' + share_text + '" target="_blank" class="btn btn-dark">' + get_social_icon('twitter', 18) + ' Twitter</a>');
+		$('#birdcage').html('<a href="https://mastodonshare.com/?text='+ share_text_toot + '&url='+ share_url +'" target="_blank" class="btn btn-dark">'  + get_social_icon('mastodon', 18) + ' Mastodon</a> &nbsp; <a href="https://twitter.com/intent/tweet?url=' + share_url +'&text=' + share_text_tweet + '" target="_blank" class="btn btn-dark">' + get_social_icon('twitter', 18) + ' Twitter</a>');
 	}
 
 
@@ -341,9 +342,9 @@
 	 // update the metaphor
   	  $('#metaphorical').html('<p>' + generated + '<br /><span id="birdcage"></span></p>');
   	  
-  	  // add the tweet button, change the tweeted name as needed (if you must)
+  	  // add the share buttons for Twitter and Mastodon, change the credit name as needed (if you must)
   	  // and provide the name for the kind of thing generated
-  	  tweet_it_like_a_bluebird( generated, '@cogdog', 'Randomized Q Utterance About AI');
+  	  share_it_like_a_bluebird( generated, '@cogdog', '@cogdog@social.fossdle.org', 'Randomized Q Utterance About AI');
 
 	}
 	// set up the generate button

@@ -5,6 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://cogdog.github.io/edtechaphors/martin/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ed Tech Metaphors">
+  <meta property="og:description" content="Generate an Ed Tech Metaphor">
+  <meta property="og:image" content="https://cogdog.github.io/edtechaphors/martin/background.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="cogdog.github.io">
+  <meta property="twitter:url" content="https://cogdog.github.io/edtechaphors/martin/">
+  <meta name="twitter:title" content="Ed Tech Metaphors">
+  <meta name="twitter:description" content="Generate an Ed Tech Metaphor">
+  <meta name="twitter:image" content="https://cogdog.github.io/edtechaphors/martin/background.jpg">
+
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+  
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     
@@ -14,33 +31,8 @@
     <link rel="shortcut icon" type="image/png" href="bigfan.png"/>
  
 	<!-- let the styling commence -->
-	<style>
-		
-	    .jumbotron  {
-	    	opacity: 0.8;
-	    	margin-bottom:1em;
-	    	min-height: 5em;
-	    }
-	    
-	    /* longer generated messages might need smaller font size */
-	    #metaphorical {
-	    	font-size:4vw;
-	    }
+	<link rel="stylesheet" href="style.css" />
 
-	    #footer {
-			position:absolute;
-			bottom:0;
-			left: 0;
-			color:#fff;
-			font-size: 0.8em;
-			line-height:1.1;
-		}	
-		
-		#footer a {
-			color:#fff;
-		}
-	</style>
-	
 
 	<!-- make title your own -->
     <title>Ed Tech Metaphors</title>
@@ -108,9 +100,56 @@ quick code by <a href="http://cog.dog/"> @cogdog</a> made for <a href="http://bl
 	//    var bird: twitter name to credit
 	//    var birdsong: name for this kind of generators
 	// Blame/Credit Stephen Downes https://www.downes.ca/post/71841
-	function tweet_it_like_a_bluebird( chirp, bird, birdsong ) {
+	
+	
+	function get_social_icon(species, isize=24) {
+		// sharing button icons use BootStrap svg ones
+		//    species: platform
+		// ///isize  : pixel size of icon
 		
-		$('#birdcage').html('<a href="https://twitter.com/intent/tweet?url=' + encodeURI(window.location.href) +'&text=' + encodeURIComponent('Another generated ' + birdsong +  '\n\n' + href2text(chirp) + '\n\nBlame ' + bird  + ' for') + '" target="_blank"><img src="tweet.png" alt="Tweet"></a>');
+		if (species == "twitter") {
+			return ('<svg xmlns="http://www.w3.org/2000/svg" width="'+ isize +'" height="'+ isize +'" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15"/></svg>');
+			
+		} else if (species == "mastodon")  {
+			return ('<svg xmlns="http://www.w3.org/2000/svg" width="'+ isize +'" height="'+ isize +'" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16"><path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/></svg>');
+		}
+	}
+	
+	function share_it_like_a_bluebird( chirp, bird='', tusk='', birdsong ) {
+		// return social media buttons, once it was just a burd
+		//    chirp   : text of message
+		//    bird    : twitter user name (blank to skip)
+		//    tusk    : mastodon user name (blank to skip)
+		//    birdsong: name of this generator
+		
+		// url for this generator
+		share_url = encodeURI(window.location.href);
+		
+		// initialize output
+		button_str = '';
+
+		if (tusk) {
+		console.log('got tusk');
+			// create mastodon share button
+			share_text = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + tusk  + ' for');
+		
+			button_str+= '<a href="https://mastodonshare.com/?text='+ share_text + '&url='+ share_url +'" target="_blank" class="btn btn-dark">'  + get_social_icon('mastodon', 18) + ' Mastodon</a>';
+			console.log(button_str);	
+		}
+
+		
+		if (bird) {
+			console.log('got bird');
+			// create twitter share button
+			share_text = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + bird  + ' for');
+			
+			button_str+= '<a href="https://twitter.com/intent/tweet?url=' + share_url +'&text=' + share_text + '" target="_blank" class="btn btn-dark">' + get_social_icon('twitter', 18) + ' Twitter</a> ';
+			console.log(button_str);	
+		}
+		
+	
+		// fill that div
+		$('#birdcage').html(button_str);
 	}
 
 
@@ -159,12 +198,16 @@ quick code by <a href="http://cog.dog/"> @cogdog</a> made for <a href="http://bl
 	  // generate it!
 	  var generated = options[random(options)];
 
-	 // add place holder for a twitter button
-  	  $('#metaphorical').html(generated + '<br /><span id="birdcage"></span>');
+	 // update the metaphor
+  	  $('#metaphorical').html('<p>' + generated + '<br /><span id="birdcage"></span></p>');
   	  
-  	  // add the teet this button, change the tweeted name as needed (if you must)
-  	  // and provide the name for the kind of thing generated
-  	  tweet_it_like_a_bluebird( generated, '@meller', 'EdTech Metaphor');
+  	  // add  share buttons for Twitter and Mastodon
+  	  //    comment out to skip
+  	  //    First parameter is the generated text
+  	  //    Second parameter is twitter user name, leave '' to skip twitter
+  	  //    Third parameter is Mastodon user name, leave '' to skip Mastodon
+  	  //    For name for the kind of thing generated
+  	  share_it_like_a_bluebird( generated, '@cogdog', '@cogdog@social.fossdle.org', 'Edtech Metaphor');
 
 	}
 	

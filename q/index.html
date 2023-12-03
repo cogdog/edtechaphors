@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
   <!-- HTML Meta Tags -->
   <title>What Does Q Do?</title>
   <meta name="description" content="Random text generator to create disgusted utterances about AI from MI6's most valuable asset... the original Q">
@@ -37,46 +35,7 @@
     <link rel="shortcut icon" type="image/png" href="bigfan.png"/>
 
 	<!-- let the styling commence -->
-	<style>
-		
-	    .jumbotron  {
-	    	opacity: 0.8;
-	    	margin-bottom:1em;
-	    	min-height: 5em;
-	    }
-	    
-	    /* longer generated messages might need smaller font size */
-	    #metaphorical {
-	    	font-size:4vw;
-	    }
-
-	    #footer {
-			position:absolute;
-			bottom:0;
-			left: 0;
-			color:#fff;
-			font-size: 0.8em;
-			line-height:1.1;
-		}	
-		
-		#footer a {
-			color:#fff;
-		}
-		.backstretch {
-    		filter: brightness(40%);
-		}
-		
-		#birdcage {
-			font-size: initial;
-		}
-
-		#birdcage .btn {
-			margin-left: 0.5em;
-			margin-right: 0.5em;
-		}	
-		
-	</style>
-	
+	<link rel="stylesheet" href="style.css" />
 
 	<!-- make title your own -->
     <title>What Does Q Do?</title>
@@ -387,7 +346,7 @@
   	  //    Second parameter is twitter user name, leave '' to skip twitter
   	  //    Third parameter is Mastodon user name, leave '' to skip Mastodon
   	  //    For name for the kind of thing generated
-  	  share_it_like_a_bluebird( generated, '', '@cogdog@social.fossdle.org', 'Randomized Q Utterance About AI');
+  	  share_it_like_a_bluebird( generated, '@cogdog', '@cogdog@social.fossdle.org', 'Randomized Q Utterance About AI');
 
 	}
 	// set up the generate button

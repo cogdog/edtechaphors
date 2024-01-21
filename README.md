@@ -7,11 +7,13 @@
 
 https://cogdog.github.io/edtechaphors/
 
-What I like about this method is that it allows you to create text generators that do not follow a single sentence pattern but it provides a mix and match way to pull from different sets of possible fill in words, but also, randomize the formula for sentences that use them.
+What I like about this random generator is that it allows you to create text generators that do not follow a single sentence pattern but it provides a mix and match way to pull from different sets of possible fill in words, but also, randomize the formula for sentences that use them.
 
 If that is as clear as mud, try the examples below.
 
 Learn more about this little experiment in [A Generator for Martin](https://cogdogblog.com/2019/09/generator-for-martin/)
+
+And it's even more fun to make then to use! As a service, [this gnarly looking page can be viewed more cleanly with Docsify This](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/cogdog/edtechaphors/master&homepage=README.md&sidebar=true#/).
 
 
 ## My Fleet of Generators

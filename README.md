@@ -13,7 +13,7 @@ If that is as clear as mud, try the examples below.
 
 Learn more about this little experiment in [A Generator for Martin](https://cogdogblog.com/2019/09/generator-for-martin/)
 
-And it's even more fun to make then to use! As a service, [this gnarly looking page can be viewed more cleanly with Docsify This](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/cogdog/edtechaphors/master&homepage=README.md&sidebar=true#/).
+And it's even more fun to make then to use! As a service, [this gnarly looking page can be viewed more cleanly with Docsify This](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/cogdog/edtechaphors/master&homepage=README.md&edit-link=https://github.com/cogdog/edtechaphors/blob/master&sidebar=true&browser-tab-title=Metaphor%20Generators%20-published%20by%20Docsify-This&edit-link-text=View/Edit%20in%20GitHub#/).
 
 
 ## My Fleet of Generators

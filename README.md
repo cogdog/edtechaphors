@@ -7,22 +7,14 @@
 
 https://cogdog.github.io/edtechaphors/
 
+What I like about this method is that it allows you to create text generators that do not follow a single sentence pattern but it provides a mix and match way to pull from different sets of possible fill in words, but also, randomize the formula for sentences that use them.
+
+If that is as clear as mud, try the examples below.
+
 Learn more about this little experiment in [A Generator for Martin](https://cogdogblog.com/2019/09/generator-for-martin/)
 
-## Fork and Roll
 
-Make your own! Change out the background image and modify the structure of generated phrases. Here are ones I know of
-
-
-* Open Education Metaphors by Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/ and [now an entire BOOK](http://blog.edtechie.net/books/metaphors-of-ed-tech-is-out/) that even features this tool
-* Modified version by John Johnston (pulling the content from a google sheet, that's neat!) http://git.johnj.info/edtechaphors/?id=1Tk-IUE8OG_InI6KjZ4GAFMm4IyJl1PoZQYzHCbm4fN8
-* EdTech Metaphor Generator auf deutsch übersetzt/ angepasst by Nele Hirsch https://metaphernbot.glitch.me/
-* Open Degree Metaphors by Martin Weller http://opendegree.edtechie.net/
-* EdTech Pitch Machine by (again) Martin Weller https://edtechie.net/edtechpitch/
-
-
-You can easily download this repo make your own copy, and hoist to your own web server or any place you can publish HTML to the web. That's your own generator, which is nice.
-
+## My Fleet of Generators
 There are more as part of this repo or as Alan feels like rolling out new ones. You can actually **contribute** to them by forking a copy (or just going to the index.html in any and click the edit button, this will generate a copy). Push the changes my way, please, make my day! Your additions will make these generators more interesting!
 
 * Original (Extra Crispy?) EdTech Metaphors https://cogdog.github.io/edtechaphors/
@@ -35,6 +27,21 @@ There are more as part of this repo or as Alan feels like rolling out new ones. 
 * Everyone is Rolling out an AI Named Q https://cogdog.github.io/edtechaphors/q/
 
 See also [how the Creative Prompt machine was used as a DS106 Daily Create](https://daily.ds106.us/tdc3581/).
+
+
+## Make Your Own, aka Fork and Roll
+
+Make your own! Change out the background image and modify the structure of generated phrases. Here are ones I know that others have done
+
+* Open Education Metaphors by Martin Weller (featuring Teilo with a big stick!) http://metaphor.edtechie.net/ and [now an entire BOOK](http://blog.edtechie.net/books/metaphors-of-ed-tech-is-out/) that even features this tool
+* Modified version by John Johnston (pulling the content from a google sheet, that's neat!) http://git.johnj.info/edtechaphors/?id=1Tk-IUE8OG_InI6KjZ4GAFMm4IyJl1PoZQYzHCbm4fN8
+* EdTech Metaphor Generator auf deutsch übersetzt/ angepasst by Nele Hirsch https://metaphernbot.glitch.me/
+* Open Degree Metaphors by Martin Weller http://opendegree.edtechie.net/
+* EdTech Pitch Machine by (again) Martin Weller https://edtechie.net/edtechpitch/
+
+
+You can easily download this repo make your own copy, and hoist to your own web server or any place you can publish HTML to the web. That's your own generator, which is nice.
+
 
 ## Hardly Passing For Documentation
 

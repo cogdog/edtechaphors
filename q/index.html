@@ -44,7 +44,7 @@
   <!-- where the action happens -->
   <div class="jumbotron">
   <p id="metaphorical" class="display-4 text-center">Everyone is Rolling out an AI Named Q</p>
-  <p>What the heck does it do? Can it really be better than the builder of gizmos for James Bond?</p>
+  <p><a href="https://aws.amazon.com/q/"  target="_blank">Amazon has one</a>, then <a href="https://en.wikipedia.org/wiki/OpenAI_o1#Background"  target="_blank">OpenAI used that name before moving to "Strawberry" and "o1"</a>. Who better can disdainfully explain how these gizmos  work than MI6's most valuable asset... <a href="https://en.wikipedia.org/wiki/Q_(James_Bond)" target="_blank">the original Q</a>!</p>
   </div>
 	
 	<div id="main" class="container-fluid text-center">
@@ -179,7 +179,10 @@
 			'Meya',
 			'KAI',
 			'Salesforce Einstein',
+			'Meta',
+			'Palintir',
 			'Pega',
+			'ELIZA',
 			'RapidMiner',
 			'Anaconda Enterprise',
 			'NVIDIA',
@@ -192,7 +195,14 @@
 			'PyTorch',
 			'H20.ai',
 			'Recepiviti',
-			'IBM Watson' 
+			'IBM Watson',
+			'Dark Trace',
+			'Tempus AI',
+			'Whisper',
+			'Synthesia',
+			'Midjourney',
+			'Copilot',
+			'HuggingFace'
   	   ];
   	   
   	   // working parts of the machine, code names/ nouns
@@ -215,12 +225,21 @@
 			'Dromedary',
 			'Alpaca',
 			'Vicuna',
-			'DeepSpeed'
+			'DeepSpeed',
+			'Bard',
+			'LaMDA',
+			'BERT',
+			'RoBERTa',
+			'Gemeni',
+			'Grok',
+			'Ollama',
 		];
   	   	
   	   // nebulous concepts inside the boxes, nouns
   	   let thing = [
 			'hyperparameter',
+			'agentic AI',
+			'anaphora',
 			'constitutional ai',
 			'convolutional neural network',
 			'model',
@@ -228,16 +247,26 @@
 			'transformer',
 			'anomaly detection',
 			'candidate generation',
+			'autonomous decision-making',
+			'prompt chaining',
 			'bounding box',
 			'ablation',
 			'chatbot',
+			'few-shot learning',
+			'robotic process automation tasks',
+			'generative adversarial networks',
+			'f-score',
+			'data drift',
+			'extractive summarization',
 			'k-means',
+			'part-of-speech tagging',
 			'corpus',
 			'label leakage',
 			'matplotlib',
 			'gradient descent',
 			'mini-descent',
 			'convex optimization',
+			'sentiment analysis',
 			'agi',
 			'copilot',
 			'embodied agent',
@@ -245,6 +274,7 @@
 			'counterfactual fairness',			
 			'translational invariance',
 			'token',
+			'retrieval-augmented generation',
 			'embedding vector',
 			'classification threshold',
 			'variational autoencoder',
@@ -332,6 +362,11 @@
 `Good luck out there ${bigs[random(bigs)]} in the field... And please return the ${thing[random(thing)]} in one piece.`,
 ` Were you expecting a ${bigs[random(bigs)]} pen? We don't really go in for ${how[random(how)]} anymore.`,
 `The ${platforms[random(platforms)]}. It's been coded to your palmprint so only for your ${bigs[random(bigs)]}. Less of a random ${how[random(how)]}, more of a personal statement.`,
+`Were you expecting a ${thing[random(thing)]}? We don't really go in for that anymore.`,
+`The ${platforms[random(platforms)]} ${platforms[random(bigs)]} short. It's been coded to your palmprint so only you can fire it. Less of a ${platforms[random(thing)]}, more of a personal statement.`,
+`It's a fine line. If the ${thing[random(thing)]}'s too small, then he might miss it. Too big, and ${platforms[random(platforms)]} will smell a rat.`,
+`It always makes me feel a bit melancholy. Grand old ${bigs[random(bigs)]} being ignominiously haunted away to scrap... The inevitability of time, don't you think? What do you see?`,
+`To the casual eye, it's as good as invisible. Plus all the usual refinements: ${platforms[random(thing)]}, target seeking ${platforms[random(how)]} to shoot down ${platforms[random(thing)]}.`
 		]
 
 	  // generate it!
@@ -346,7 +381,7 @@
   	  //    Second parameter is twitter user name, leave '' to skip twitter
   	  //    Third parameter is Mastodon user name, leave '' to skip Mastodon
   	  //    For name for the kind of thing generated
-  	  share_it_like_a_bluebird( generated, '@cogdog', '@cogdog@social.fossdle.org', 'Randomized Q Utterance About AI');
+  	  share_it_like_a_bluebird( generated, '@cogdog', '@cogdog@cosocial.ca', 'Randomized Q Utterance About AI');
 
 	}
 	// set up the generate button

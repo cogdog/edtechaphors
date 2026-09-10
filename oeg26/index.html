@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://cogdog.github.io/edtechaphors/oeg26/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Choose an OEGlobal 2026 Session for Me">
+  <meta property="og:description" content="Random selection of a conference session to attend at the OEGlobal 2026 conference">
+  <meta property="og:image" content="https://cogdog.github.io/edtechaphors/oeg26/oeglobal26.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="cogdog.github.io">
+  <meta property="twitter:url" content="https://cogdog.github.io/edtechaphors/oeg26/">
+  <meta name="twitter:title" content="Choose an OEGlobal 2026 Session for Me">
+  <meta name="twitter:description" content="Random selection of a conference session to attend at the OEGlobal 2026 conferencet">
+  <meta name="twitter:image" content="https://cogdog.github.io/edtechaphors/oeg26/oeglobal26.jpg">
+
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    
+    <!-- big fan of your favicon 
+          Fan by kareemov CC BY from the Noun Project 
+          https://thenounproject.com/term/fan/2123165 -->
+    <link rel="shortcut icon" type="image/png" href="bigfan.png"/>
+ 
+	<!-- let the styling commence -->
+	<link rel="stylesheet" href="style.css" />
+
+
+	<!-- make title your own -->
+    <title>Choose an OEGlobal 2026 Session for Me</title>
+  </head>
+  <body>
+  <!-- where the action happens -->
+  <div class="jumbotron">
+  <h1 id="metaphorical" class="display-4 text-center">Need suggestions for a session to attend at OEGlobal 2026?</h1>
+  </div>
+	
+	<div id="main" class="container-fluid text-center">
+		<button type="button" class="btn btn-primary btn-lg" id="gimme">Suggest One</button>
+	</div><!-- #main -->
+	
+	
+	<div id="footer" class="container-fluid text-center">
+		<p>
+		<!-- background image attribution -->
+			<a title="Martin branded generator" href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1422567">OEGlobal 2026 Banner</a>  by <a href="https://www.oeglobal.org/about-us/leadership/staff/mario-badilla/">Mario Badilla / OEGlobal</a> shared under a Creative Commons CC BY license.
+			<!-- code credit, thanks for keeping -->
+			quick code by <a href="http://cog.dog/"> @cogdog</a> made for <a href="http://blog.edtechie.net/">@edtechie</a> &bull; <a href="https://github.com/cogdog/edtechaphors">available for forking</a>
+		</p>
+	</div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js" integrity="sha512-bXc1hnpHIf7iKIkKlTX4x0A0zwTiD/FjGTy7rxUERPZIkHgznXrN/2qipZuKp/M3MIcVIdjF4siFugoIc2fL0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <script>
+	// backstrech the background image -->
+	 $.backstretch("oeglobal26.jpg");
+
+	// general purpose function to return a random index to input array
+	function random(array) {
+	  return Math.floor(Math.random() * array.length)
+	}
+
+	// Replaces an HTML href with the link text followed by URL 
+	// to make tweetable for array elements that have links in them
+	function href2text(str) {
+		// pattern for matching href
+		let regexpHref = /<a[^>]+href=\"(.*?)\"[^>]*>(.*?)<\/a>/gi;
+		
+		// get matches
+		let match = regexpHref.exec(str);
+		
+		if (match) {
+			// get the replacement
+			do {
+				 replacement = `${match[2]} ${match[1]}`;
+			} while((match = regexpHref.exec(str)) !== null);
+
+		   // replace the match string with the replacement
+			return( str.replace(regexpHref, replacement));
+		} else {
+			return (str);
+		}
+	}
+
+	// generate the link for a tweet this button
+	//    var chirp: the message
+	//    var bird: twitter name to credit
+	//    var birdsong: name for this kind of generators
+	// Blame/Credit Stephen Downes https://www.downes.ca/post/71841
+	
+	
+	function get_social_icon(species, isize=24) {
+		// sharing button icons use BootStrap svg ones
+		//    species: platform
+		// ///isize  : pixel size of icon
+		
+		if (species == "twitter") {
+			return ('<svg xmlns="http://www.w3.org/2000/svg" width="'+ isize +'" height="'+ isize +'" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15"/></svg>');
+			
+		} else if (species == "mastodon")  {
+			return ('<svg xmlns="http://www.w3.org/2000/svg" width="'+ isize +'" height="'+ isize +'" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16"><path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/></svg>');
+		}
+	}
+	
+	function share_it_like_a_bluebird( chirp, bird='', tusk='', birdsong ) {
+		// return social media buttons, once it was just a burd
+		//    chirp   : text of message
+		//    bird    : twitter user name (blank to skip)
+		//    tusk    : mastodon user name (blank to skip)
+		//    birdsong: name of this generator
+		
+		// url for this generator
+		share_url = encodeURI(window.location.href);
+		
+		// initialize output
+		button_str = '';
+
+		if (tusk) {
+		console.log('got tusk');
+			// create mastodon share button
+			share_text = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + tusk  + ' for');
+		
+			button_str+= '<a href="https://mastodonshare.com/?text='+ share_text + '&url='+ share_url +'" target="_blank" class="btn btn-dark">'  + get_social_icon('mastodon', 18) + ' Mastodon</a>';
+			console.log(button_str);	
+		}
+
+		
+		if (bird) {
+			console.log('got bird');
+			// create twitter share button
+			share_text = encodeURIComponent('Another ' + birdsong +  '\n\n' + href2text(chirp.replace(/(<([^>]+)>)/gi, "")) + '\n\nBlame ' + bird  + ' for');
+			
+			button_str+= '<a href="https://twitter.com/intent/tweet?url=' + share_url +'&text=' + share_text + '" target="_blank" class="btn btn-dark">' + get_social_icon('twitter', 18) + ' Twitter</a> ';
+			console.log(button_str);	
+		}
+		
+	
+		// fill that div
+		$('#birdcage').html(button_str);
+	}
+
+
+	/* All of the stuff to be randomized is created as arrays. 
+	   Create more arrays to create different mixes of things to be generated. 
+	   If a single quote, a apostrophe needed, enter as 
+	*/
+
+	 // arrays of metaphors sites, each linked
+	  let sessions = [
+	  '<a href="https://sched.co/2QUeJ" target="_blank">Breaking the Golden Handcuffs: Harnessing ADAPT\'s Public Question Bank for Open, Flexible Assessment</a>', '<a href="https://sched.co/2QUZ8" target="_blank">Innovating Beyond Textbooks: Democratizing Knowledge Through Library-Led Support for Open Homework Systems</a>', '<a href="https://sched.co/2QnXI" target="_blank">Open Access 3D Printed Anatomical Models for Health Sciences Education</a>', '<a href="https://sched.co/2QnWx" target="_blank">Creating Inclusive Multilingual Resources for all</a>', '<a href="https://sched.co/2QUZx" target="_blank">Design, Build, Share: A Panel Workshop on Open Microcredential Content and Credential Metadata</a>', '<a href="https://sched.co/2QUd6" target="_blank">Coding a Drawing Tool Together: Learning How to Contribute to Open Source Software</a>', '<a href="https://sched.co/2QUcK" target="_blank">Who Maintains the Commons? A Hybrid Panel on Hacking OER for Shared Stewardship</a>', '<a href="https://sched.co/2QUb4" target="_blank">DocIAComp. Artificial Intelligence and Open Education: Toward a Teaching Competency Framework</a>', '<a href="https://sched.co/2QUdm" target="_blank">Beyond the Textbook: Innovating Open ASL Curriculum for Equitable Access</a>', '<a href="https://sched.co/2QnXC" target="_blank">AI, Openness, and Democracy: Ethical AI Education in Diverse Learning Contexts</a>', '<a href="https://sched.co/2QUZH" target="_blank">The Leading Edge of Open Education: Meet the 2026 Awardees of the OE Awards for Excellence</a>', '<a href="https://sched.co/2QUXU" target="_blank">OER Beyond Gen Ed: Lessons from Washington\'s Professional-Technical Programs</a>', '<a href="https://sched.co/2QUXI" target="_blank">The Work at the Hinge: Mini Structures and Human-Centered Open Education</a>', '<a href="https://sched.co/2QUXg" target="_blank">Beyond the PDF: Finding and Remixing Living OER with the Pressbooks Directory</a>', '<a href="https://sched.co/2QUa6" target="_blank">Resilience and Responsiveness: Lessons of Open Practices in Emergencies</a>', '<a href="https://sched.co/2QUbS" target="_blank">Critical Open Educational Practices: Beyond Access, Toward Pedagogical Transformation</a>', '<a href="https://sched.co/2QUaX" target="_blank">Filmbuilding: A Framework for Connection, Creativity, and Collective Learning</a>', '<a href="https://sched.co/2QUcu" target="_blank">From Evidence to Understanding: Aligning OER Research with Disciplinary Practice</a>', '<a href="https://sched.co/2QUdC" target="_blank">Strategic Alignment: Leveraging OER to Foster Transformative Faculty Partnerships</a>', '<a href="https://sched.co/2QUcB" target="_blank">When Open Content Moves Beyond Vision: Tactile and Multisensory Design for Accessibility</a>', '<a href="https://sched.co/2QUa9" target="_blank">Service Learning: Decolonizing Open Education Through African Knowledge Co-Creation</a>', '<a href="https://sched.co/2QUeh" target="_blank">Keynote 1: The Traveling Archive: On Creativity, Community, and Classrooms Without Walls</a>', '<a href="https://sched.co/2QnWc" target="_blank">From Consumers to Contributors: Exploring How Participation in Open Publishing Influences Student Belonging</a>', '<a href="https://sched.co/2QUaF" target="_blank">A Massachusetts Initiative to Connect OER with Responsible AI Use</a>', '<a href="https://sched.co/2QUa3" target="_blank">Who Owns Learning? Sovereignty, Solidarity, and Open Education Across Divided Worlds</a>', '<a href="https://sched.co/2QUbt" target="_blank">Teacher Co-Creation of OER Through Design Thinking: A Transferable Pedagogical Model from Latin America</a>', '<a href="https://sched.co/2QUcc" target="_blank">EdTech, Open Values: Preparing Open Educators for AI, and the Next Big Thing</a>', '<a href="https://sched.co/2QnWi" target="_blank">Experiences of online faculty in using open pedagogy to support social justice</a>', '<a href="https://sched.co/2QUXd" target="_blank">Data in Your Neighborhood: Exploring the Potential of Secondary Data Analysis in Open Education Research</a>', '<a href="https://sched.co/2QUZi" target="_blank">UHCOOL: A Sustainable Governance Model Bridging University OER and K-12 Blended Learning</a>', '<a href="https://sched.co/2QUaU" target="_blank">Students as Co-Creators: Advancing Equity and Engagement Through Collaborative Open Educational Resource Development in Undergraduate Biology</a>', '<a href="https://sched.co/2QUYh" target="_blank">From AI Disclosure to Human Declaration: Centring Human Authorship in OER Creation</a>', '<a href="https://sched.co/2QUd3" target="_blank">Commons, Ecosystems, and Schools: Structures for Futuring Open</a>', '<a href="https://sched.co/2QUbP" target="_blank">Innovating Open Simulation: Transforming Healthcare Education Through Open Content, Access, and Equity</a>', '<a href="https://sched.co/2QUZl" target="_blank">Learning in the Wild: A Large-Scale Analysis of GenAI as a Dialogic Open Educational Resource</a>', '<a href="https://sched.co/2QUci" target="_blank">The Seven-Year Evolution of a Z-Course Boot Camp</a>', '<a href="https://sched.co/2QUYM" target="_blank">What Would You Do with $100? Student-Centered OER Advocacy in the Library</a>', '<a href="https://sched.co/2QUeV" target="_blank">How Open Is a University? A Framework for Comparison</a>', '<a href="https://sched.co/2QUaI" target="_blank">The Pit Stop Program at NC State: Where Emerging Educational Technology Meets Open Practice</a>', '<a href="https://sched.co/2QUam" target="_blank">Open Knowledge Content Curation: From Scientific Information Watch to Self and Active Learning</a>', '<a href="https://sched.co/2QUew" target="_blank">Welcome to Day 2</a>', '<a href="https://sched.co/2QUco" target="_blank">Charting the Path: Seeding the Open Education Movement</a>', '<a href="https://sched.co/2QUcW" target="_blank">The Open Science Adoption Gap in Research Training</a>', '<a href="https://sched.co/2QUcr" target="_blank">Democratizing Knowledge Through the Localization of OER at the School and Classroom Level in Lebanon</a>', '<a href="https://sched.co/2QUdL" target="_blank">Fostering Creativity in Creative Commons: Empowering Communities to Remix Educational Resources</a>', '<a href="https://sched.co/2QUZE" target="_blank">Embedding No-Cost and Low-Cost Materials in Program Design</a>', '<a href="https://sched.co/2QUYP" target="_blank">TESSFEG: An Open Source Gamified Simulations System for Democratizing Technical Knowledge for Global Learners</a>', '<a href="https://sched.co/2QUcx" target="_blank">Preparing for the Future of Work: Communications Between Workforce and OER</a>', '<a href="https://sched.co/2QUaC" target="_blank">Sometimes Open Isn\'t Enough: Leveraging Library Resources in an OER Ecosystem</a>', '<a href="https://sched.co/2QUcH" target="_blank">Beyond Open Access: The CARE–KNOW–DO Framework for Transformative Open Education</a>', '<a href="https://sched.co/2QUYG" target="_blank">From Vision to Impact: A Change Approach Toward Accessible Digital Educational Resources</a>', '<a href="https://sched.co/2QUdd" target="_blank">Cross-Institutional Assessment of Student Outcomes Associated with Course Material Cost in Massachusetts Public Higher Education</a>', '<a href="https://sched.co/2QUYJ" target="_blank">Teachers as Changemakers: Adopting OER for Environmental and Sustainability Education in Middle School</a>', '<a href="https://sched.co/2QUXv" target="_blank">The Impact of Open Textbooks in Taiwan: A Personal and Institutional Journey</a>', '<a href="https://sched.co/2QUbM" target="_blank">Intentional Design for Open Authorship: Building Infrastructure, Community, and Time to Write</a>', '<a href="https://sched.co/2QUYA" target="_blank">Open Pedagogy in Action: Enhancing Information Literacy Through Student-Led OER Revision</a>', '<a href="https://sched.co/2QUXR" target="_blank">Global South Knowledge in Northern Systems: Rethinking Teacher Integration Through Open Educational Practices</a>', '<a href="https://sched.co/2QUZf" target="_blank">Open as Resilience: Collaborations, Storytelling, and Solidarity in Contexts of Crisis</a>', '<a href="https://sched.co/2QUdI" target="_blank">Scaling OER Peer Review with Artificial Intelligence: A MERLOT Pilot Study</a>', '<a href="https://sched.co/2QUdj" target="_blank">Make a Zine and Make Community</a>', '<a href="https://sched.co/2QUbn" target="_blank">Hard Choices, Moral Decisions, and Democracy: Overcoming the “Moral Deficit” Assumption by Building OER Texts</a>', '<a href="https://sched.co/2QUYD" target="_blank">What If Open Learning Began with the World Each Learner Brings?</a>', '<a href="https://sched.co/2QUc8" target="_blank">OER: The Twelfth High Impact Practice</a>', '<a href="https://sched.co/2QUYz" target="_blank">California to the World: Co-Creating an Open Educational Equity Toolkit for Global Use</a>', '<a href="https://sched.co/2QUc2" target="_blank">From Adoption to Co-Creation: Rethinking Open Educational Practices in Latin America Through the Creatón</a>', '<a href="https://sched.co/2QUZu" target="_blank">Charting the Course: A National Research Agenda for Open Education</a>', '<a href="https://sched.co/2QUbD" target="_blank">Reframing the Past, Reimagining the Future: OER Project\'s Approach to History and Climate Education</a>', '<a href="https://sched.co/2QUdy" target="_blank">Future of Openness: A Human-in-the-Loop Framework for Agentic OER</a>', '<a href="https://sched.co/2QUdU" target="_blank">Conversations in Care: Strategies for Collective Healing in the Open Education Movement</a>', '<a href="https://sched.co/2QUYk" target="_blank">Connecting the Opens in Europe: From Strategy to Alliance-Building for Knowledge as a Public Good</a>', '<a href="https://sched.co/2QUZr" target="_blank">From Campsite to Commons: Reimagining Who Builds and Owns Open Knowledge</a>', '<a href="https://sched.co/2QUZZ" target="_blank">Creating Community Through Curiosity: Student Authored Open Texts at the Queensland University of Technology</a>', '<a href="https://sched.co/2QUdv" target="_blank">Open Isn\'t Enough: Why OER Needs Care Pedagogies to Move from Information to Action</a>', '<a href="https://sched.co/2QUZQ" target="_blank">Compensating the Creator: Four Grant Models of Tiered OER Support</a>', '<a href="https://sched.co/2QUet" target="_blank">Welcome to OEGlobal 2026 Conference</a>', '<a href="https://sched.co/2QUe4" target="_blank">The Future of Openness Is Shared: Co-Creating Communication Strategies</a>', '<a href="https://sched.co/2QUda" target="_blank">The Open EdTech Advantage: Winning Support (and Funding) in a Proprietary World</a>', '<a href="https://sched.co/2QnWZ" target="_blank">OER and General Education as “Good, Necessary Trouble”</a>', '<a href="https://sched.co/2QUas" target="_blank">The 20-Year Journey of Open Education in Japan: Moving from Institutional Initiatives Toward a Nation-Wide Collaborative Ecosystem</a>', '<a href="https://sched.co/2QUa0" target="_blank">Open All the Way Down: A Freely Reusable Toolkit for Scaling OER, Access, and Equity</a>', '<a href="https://sched.co/2QUag" target="_blank">Hacking Distance: Real-World Open Praxis and Postdigital Literacies for the Online Student</a>', '<a href="https://sched.co/2QUcQ" target="_blank">The Content Mafia: How Publishers Weaponize Copyright to Control Educational Resources</a>', '<a href="https://sched.co/2QUY7" target="_blank">Identify, Connect, and Refresh: A Practical Framework for Multi-Institutional Collaboration to Democratize Educational Resources</a>', '<a href="https://sched.co/2QUZK" target="_blank">Multilingual Glossary – an OER Addressing Social Injustice in Learning Pharmacology at Nelson Mandela University</a>', '<a href="https://sched.co/2QUcN" target="_blank">Oak\'s Open Knowledge Graph: The Missing Foundation for Curriculum-Aligned AI in Education</a>', '<a href="https://sched.co/2QUZB" target="_blank">Indigenous Languages, Multimedia, and OER: From Decolonising the Mind to Democratising Knowledge</a>', '<a href="https://sched.co/2QUeA" target="_blank">Augmenting Open Educational Resources at Scale: AI-Driven Approaches to Adoption, Adaptation, and Distribution</a>', '<a href="https://sched.co/2QUdp" target="_blank">Futures Thinking in Open Education, and What to Do When the AI Bubble Bursts</a>', '<a href="https://sched.co/2QUcZ" target="_blank">Designing Open Support Ecosystems for First-Year Open and Distance Learners: Lessons from PASE SUAyED</a>', '<a href="https://sched.co/2QUbY" target="_blank">Innovating Practices Around Open Education Through BarCamps and Unconferences. Learnings from 14 Years of OERcamps</a>', '<a href="https://sched.co/2QUcE" target="_blank">Beyond the Book: Hacking OER Infrastructures for Shared Maintenance and Governance</a>', '<a href="https://sched.co/2QnWo" target="_blank">From Classroom to Community: Open Pedagogy for Inclusive Care</a>', '<a href="https://sched.co/2QUc5" target="_blank">Open Publishing in Practice Across Europe</a>', '<a href="https://sched.co/2QUZW" target="_blank">Open as a Strategic Imperative for Sustaining Public Systems</a>', '<a href="https://sched.co/2QUek" target="_blank">Keynote 2: Talk with Us About Us: The Student Perspective</a>', '<a href="https://sched.co/2QUen" target="_blank">Keynote 3: Catalyzing Open Synergies</a>', '<a href="https://sched.co/2QUe1" target="_blank">AI and the Future of Openness: Insights from the DOERS AI+OER Project</a>', '<a href="https://sched.co/2QUXL" target="_blank">Procedural Planning Decision-Making in Open Education Practices</a>', '<a href="https://sched.co/2QUZT" target="_blank">From Classrooms to Careers: Equipping Today\'s Students with the Workforce Skills of Tomorrow Through OER</a>', '<a href="https://sched.co/2QUaO" target="_blank">Re-Designing an International, Student-Led, Co-Curricular, Community-Engaged, Experiential Learning Project for OA</a>', '<a href="https://sched.co/2QUX9" target="_blank">Empowering People with Disabilities About Open Educational Resources- Bridging the Educational Gaps with Inclusive, Accessible and Innovative Practices</a>', '<a href="https://sched.co/2QnX6" target="_blank">MIT OpenCourseWare To Go: Extending Open Knowledge to Mobile Learners Globally</a>', '<a href="https://sched.co/2QUdO" target="_blank">Inventing Together: Collaborative Product Strategy in the Open edX Ecosystem</a>', '<a href="https://sched.co/2QUYV" target="_blank">Activating Open Collections for Education: Developing Decolonial OER from Cultural Heritage Collections</a>', '<a href="https://sched.co/2QUb1" target="_blank">OpenBody Atlas: Visualizing Human Biology and Drug Interactions Through Open, Interactive Learning</a>', '<a href="https://sched.co/2QUXO" target="_blank">Listening to Teachers: A U.S.–Finland Collaboration to Develop Open AI Literacy Resources</a>', '<a href="https://sched.co/2QUee" target="_blank">From Collections to Classrooms: Unlocking Cultural Heritage for Open Education</a>', '<a href="https://sched.co/2QUeY" target="_blank">How Open Should Open Be? The AI Question for Archives, Repositories, and Open Scholarship</a>', '<a href="https://sched.co/2QUdF" target="_blank">Building the Open Education Association: A Framework for Field-Building</a>', '<a href="https://sched.co/2QUbJ" target="_blank">Reimagining Open Practices at Scale: How Massachusetts Is Using Strategic Planning and Privacy-Conscious AI to Advance and Deepen the Utilization of OER</a>', '<a href="https://sched.co/2QUaa" target="_blank">How Can Open Education and Artificial Intelligence Be Sustained to Build a Better World?</a>', '<a href="https://sched.co/2QUeS" target="_blank">Decolonizing the Open Curriculum: Reclaiming Indigenous and Local Knowledge Through ODL in Higher Education in Cameroon</a>', '<a href="https://sched.co/2QUay" target="_blank">The California ZTC Degree Grant Program: Preliminary Outcomes and What We\'re Learning</a>', '<a href="https://sched.co/2QUbh" target="_blank">Designed for Humans: Invitations and Boundaries for the Future of Open Courses</a>', '<a href="https://sched.co/2QUXX" target="_blank">Students as Knowledge Creators and the Lasting Impact of OER: Sharing Examples of Extraordinary Student Work</a>', '<a href="https://sched.co/2QUYt" target="_blank">Leading Openly, Reaching Widely: MOLLI Beyond Maryland</a>', '<a href="https://sched.co/2QUbV" target="_blank">The Curious Commons: Towards a Digital Public Goods Lab</a>', '<a href="https://sched.co/2QUeP" target="_blank">GO-GN Canada Hub - Rediscovering the Land as Open Educators</a>', '<a href="https://sched.co/2QUcl" target="_blank">Sidebars as Seedbeds: How a Modular Design Can Help with Updating, Customizing, and Localizing OER Content</a>', '<a href="https://sched.co/2QUbw" target="_blank">Open Education Fresk, a Collaborative Workshop to Explore Benefits of Open Sharing and Best Practices</a>', '<a href="https://sched.co/2QUbz" target="_blank">French Ministerial Strategy for OER and Open Education in Higher Education: National Recommendations and Actions Plan</a>', '<a href="https://sched.co/2QnX3" target="_blank">From Open Resources to Open Pathways: Leveraging OER to Expand Concurrent Enrollment Access</a>', '<a href="https://sched.co/2QUap" target="_blank">Building the Next Generation of Open Educators: Open Textbooks, Networks and Conversations for the Future</a>', '<a href="https://sched.co/2QUXy" target="_blank">Empowering Secondary Education via Open Higher Education Modules: The UHCOOL Framework</a>', '<a href="https://sched.co/2QUb7" target="_blank">Inventing Open Together: A Massachusetts Snapshot of Statewide Collaboration</a>', '<a href="https://sched.co/2QnWu" target="_blank">Don\'t I Know You?: Re-Designing Open Programming for Inventive Collaboration</a>', '<a href="https://sched.co/2QUaR" target="_blank">For the Benefit of All: Rethinking OER Access Through Discoverability and Student Navigation</a>', '<a href="https://sched.co/2QUbe" target="_blank">The Global Open Graduate Network\'s Pilot Hubs: A Networked Approach to Scaling Open Education Research</a>', '<a href="https://sched.co/2QUcT" target="_blank">Slowing Down to Lead: Design Lessons from the Rebus Luminary Fellowship</a>', '<a href="https://sched.co/2QnWf" target="_blank">Promoting the UNESCO Sustainable Development Goals with Institutional Repositories</a>', '<a href="https://sched.co/2QUdR" target="_blank">Design Discomfort: The Friction Open Education Requires</a>', '<a href="https://sched.co/2QUZo" target="_blank">Un-Grading Open: What Happens When Students Own the Outcome</a>', '<a href="https://sched.co/2QUeq" target="_blank">Keynote 4: Future Thinking: Sustaining the Field</a>', '<a href="https://sched.co/2QnX0" target="_blank">Can Open Technology and AI Power a Global STEAM Educator Network for Under-Resourced Communities?</a>', '<a href="https://sched.co/2QUYY" target="_blank">From Quality to Transparency: Leveraging AI for Assessment and Version Tracking in Open Educational Resources</a>', '<a href="https://sched.co/2QUYb" target="_blank">OERs for Kids, Edited by Kids – Online Engagement to Maximise Accessibility and Learning Outcomes</a>', '<a href="https://sched.co/2QUeG" target="_blank">The Inclusion Algorithm: Using AI Gems to Audit Equity in Open Education</a>', '<a href="https://sched.co/2QUZN" target="_blank">Beyond Epistemicide: The Polymath Protocol for Decentralized Knowledge Creation in the Global South</a>', '<a href="https://sched.co/2QnX9" target="_blank">From Numbers to Narratives: Using Data Storytelling to Demonstrate OER Impact and ROI</a>', '<a href="https://sched.co/2QUbq" target="_blank">Sweden Continues the Business: Reuse and International Collaboration for a New National Platform for OER</a>', '<a href="https://sched.co/2QUXF" target="_blank">Silences in the Literature: Reimagining Qualitative Methods in Open Education Research to Disrupt Epistemic Hierarchies</a>', '<a href="https://sched.co/2QnWT" target="_blank">Sparking Connection, Creativity, and Curiosity with the Open Education Network</a>', '<a href="https://sched.co/2QUX6" target="_blank">Building Bridges Between Higher Education and K-12 Through Open Lifelong Learning</a>', '<a href="https://sched.co/2QUXC" target="_blank">OER and Knowledge Without a Market Share</a>', '<a href="https://sched.co/2QUbA" target="_blank">Measuring Student Perceptions of Open Educational Practices in a Co-Created Course</a>', '<a href="https://sched.co/2QUZ5" target="_blank">Generative AI for Mathematics Open Educational Resources: Developer and Educator Perspectives</a>', '<a href="https://sched.co/2QUad" target="_blank">Can K-12 Teachers and Students Build Open Source AI Tools for Education?</a>', '<a href="https://sched.co/2QUZc" target="_blank">You Opened the Knowledge. The Institution Didn\'t Open with It</a>', '<a href="https://sched.co/2QUY4" target="_blank">Advancing Equity, Diversity, and Inclusion in Open Education During Politically Challenging Times</a>', '<a href="https://sched.co/2QUYn" target="_blank">Opening Pathways to Educational Research: What We Learned from 1200+ Journals Open-Access Status</a>', '<a href="https://sched.co/2QUav" target="_blank">Congratulations Open Education! So What Will You Do After Graduation?</a>', '<a href="https://sched.co/2QUe7" target="_blank">Beyond Tech vs Content: Articulating the Public Interest in AI Policy:The Open Education Perspective</a>', '<a href="https://sched.co/2QUYS" target="_blank">Scaling OER Adoption in the Arab Region: The OER SMART Model</a>', '<a href="https://sched.co/2QnWl" target="_blank">Integrating Interactive 3D Physics Simulations into Open Educational Resources and Textbooks</a>', '<a href="https://sched.co/2QUcf" target="_blank">Embedding Open Scholarship into the Ecosystem</a>', '<a href="https://sched.co/2QUaj" target="_blank">Creatón STEM+: A Methodological Model for Teacher-Led, Territory-Based OER Co-Creation in Latin America</a>', '<a href="https://sched.co/2QUXp" target="_blank">Digital Resilience of ePortfolios for Open Education – Lessons for the Future</a>', '<a href="https://sched.co/2QUdg" target="_blank">Open for All: Implementing UNESCO\'s Capacity Building Practices to Support a Thriving, Resilient OER Community</a>', '<a href="https://sched.co/2QUZ2" target="_blank">Strategic Partnerships to Support Open Initiatives Across STEM</a>', '<a href="https://sched.co/2QUY1" target="_blank">The Keys to Opening Open Pedagogy: Unlocking Student-Created Digital Escape Rooms Through Renewable Assignments</a>', '<a href="https://sched.co/2QUds" target="_blank">Feminist Pedagogy as Liberatory Practice</a>', '<a href="https://sched.co/2QUXj" target="_blank">Offline AI, Open Knowledge: Delivering OER to Schools Without Internet</a>', '<a href="https://sched.co/2QUbb" target="_blank">Designing AI to Support Learning, Not Bypass It: A CLT-Grounded MOOC Case from NTHU</a>', '<a href="https://sched.co/2QnWr" target="_blank">Reinventing assessment as an open educational practice: an experience in a posgraduate course in Uruguay</a>', '<a href="https://sched.co/2QUeM" target="_blank">AI Enhanced Open Pedagogy: Empowering Students as OER Creators in Mathematics</a>', '<a href="https://sched.co/2QUXm" target="_blank">From Print to Audiobook: Amplifying Student Voices Through Open Pedagogy</a>', '<a href="https://sched.co/2QUXa" target="_blank">Sparking Connection, Creativity, and Curiosity with the Open Education Network</a>', '<a href="https://sched.co/2QUYw" target="_blank">From Frameworks to Futures: Rethinking OER Quality as a Shared Practice</a>', '<a href="https://sched.co/2QUbk" target="_blank">Sustainable Open Education: Ideation, Advocacy, Policy, Networks and Champions</a>', '<a href="https://sched.co/2QUeb" target="_blank">Wikipedia and Open Education</a>', '<a href="https://sched.co/2QUd9" target="_blank">Practicing Rebellion: Strategies to Sustain Open Education Leadership</a>', '<a href="https://sched.co/2QUaL" target="_blank">After the Origin Story: Inheriting, Reframing, and Growing a Library-Led OER Program</a>', '<a href="https://sched.co/2QnXF" target="_blank">Bridging Global Open Education and Local Capacity Building: An Integrated Model from Paraguay.</a>', '<a href="https://sched.co/2QUbG" target="_blank">An Open Introduction to Film: Lessons from a NotebookLM Case Study</a>', '<a href="https://sched.co/2QUd0" target="_blank">Creating and Aligning Individual-Level Incentives for Open Science Practices</a>', '<a href="https://sched.co/2QUeD" target="_blank">Who Gets Credit When AI Shares the Work? A Provenance Conversation</a>', '<a href="https://sched.co/2QUXs" target="_blank">From Conference Spark to Campus Change: Students as Co-Creators of Open Practice</a>', '<a href="https://sched.co/2QUdX" target="_blank">The Structural Value of Openness: Open Infrastructure for Public Good</a>'
+	  	
+	  	];
+  
+  	  // arrays of prompts, nags, calls to actio
+	  let nudges = ['This would be a great session!', 'You should not miss ', 'Make plans to see', 'Woah!', 'I have a suggestion for you.', 'How about: '];
+	  	 
+	 
+	  /* Fun random names for the buttons, edit or add more */
+	 let button_names = [
+		'Pick Another',
+		'Suggest Again',
+		'I will take another',
+		'Gimme More',
+		'Crank it Again',
+	];
+
+	
+
+	// generate the stuff
+	// lifted somewhat from https://glitch.com/~spark-chipmunk
+	function generate() {
+		
+
+	/* create different ways of outputting a combination of arrays above.   
+	   Each element includes all of the text in backticks (not single quotes!)
+	   and use the structure ${arrayname[random(arrayname)]} to insert a random
+	   item from a specified array.
+	   
+	   The more you add here the more varied will be the responses.
+	*/
+	  
+	  let options = [
+		`${nudges[random(nudges)]} a few clicks ... ${sessions[random(sessions)]} How about sharing updates or highlights from this session in OEG Connect?`, 
+				]
+
+	  // generate it!
+	  var generated = options[random(options)];
+
+	 // update the metaphor
+  	  $('#metaphorical').html('<p>' + generated + '<br /><span id="birdcage"></span></p>');
+  	  
+  	  // add  share buttons for Twitter and Mastodon
+  	  //    comment out to skip
+  	  //    First parameter is the generated text
+  	  //    Second parameter is twitter user name, leave '' to skip twitter
+  	  //    Third parameter is Mastodon user name, leave '' to skip Mastodon
+  	  //    For name for the kind of thing generated
+  	  share_it_like_a_bluebird( generated, '', '@oeglobal@social.fossdle.org', 'OEGlobal 2026 Session Suggester');
+
+	}
+	
+	// set up the generate button
+	$(document).ready(function(){	
+		
+		$( "#gimme" ).click(function() {
+			// Generate a new thing
+			generate();
+			
+			// make the button name random too
+			$("#gimme").html(button_names[random(button_names)]);
+		});	
+			
+	});//ready
+
+	
+	</script>
+  </body>
+</html>

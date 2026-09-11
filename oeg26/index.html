@@ -40,7 +40,7 @@
   <body>
   <!-- where the action happens -->
   <div class="jumbotron">
-  <h1 id="metaphorical" class="display-4 text-center">Need suggestions for a session to attend at OEGlobal 2026?</h1>
+  <h1 id="metaphorical" class="display-4 text-center">Do you need suggestions for a session to attend at OEGlobal 2026? We cn provide one at random!</h1>
   </div>
 	
 	<div id="main" class="container-fluid text-center">
@@ -165,7 +165,7 @@
 	  	];
   
   	  // arrays of prompts, nags, calls to actio
-	  let nudges = ['This would be a great session!', 'You should not miss this one!', 'Make plans to see:', 'Woah!', 'I have a suggestion for you--', 'How about: '];
+	  let nudges = ['This would be a great session!', 'You should not miss this one!', 'Make plans to see this.', 'Woah!', 'This suggestion is just for you.', 'How about this session? ', 'Just for curiosity, we offer this suggestion.''];
 	  	 
 	 
 	  /* Fun random names for the buttons, edit or add more */
@@ -174,7 +174,7 @@
 		'Suggest Again',
 		'I will take another',
 		'Gimme More',
-		'Crank it Again',
+		'Another Try',
 	];
 
 	
@@ -193,7 +193,9 @@
 	*/
 	  
 	  let options = [
-		`${nudges[random(nudges)]}... ${sessions[random(sessions)]} How about sharing updates or highlights from this session in the <a href="https://connect.oeglobal.org/c/oeg-2026/session-conversations" target="_blank">Session Conversations area of OEG Connect</a>?`, 
+		`${nudges[random(nudges)]} ${sessions[random(sessions)]} How about sharing updates or highlights from this session in the <a href="https://connect.oeglobal.org/c/oeg-2026/session-conversations" target="_blank">Session Conversations area of OEG Connect</a>?`,
+		`We are here to help! ${sessions[random(sessions)]} ${nudges[random(nudges)]} Add to your Sched and share highlights and links in the <a href="https://connect.oeglobal.org/c/oeg-2026/session-conversations" target="_blank">Session Conversations area of OEG Connect</a>. `, 
+		`Randomly chosen just for you. ${nudges[random(nudges)]} ${sessions[random(sessions)]} -- please  share something you heard in this session in the <a href="https://connect.oeglobal.org/c/oeg-2026/session-conversations" target="_blank">Session Conversations area of OEG Connect</a>. `
 				]
 
 	  // generate it!
